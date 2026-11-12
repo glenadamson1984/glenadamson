@@ -3266,9 +3266,9 @@
     {
       "id": "manual-2026-11-09-run",
       "date": "2026-11-09",
-      "distanceKm": 10,
-      "movingSeconds": 3780,
-      "estimated": true
+      "distanceKm": 10.01,
+      "movingSeconds": 3767,
+      "estimated": false
     },
     {
       "id": "manual-2026-11-10-run",

@@ -5,9 +5,9 @@
       {
         "id": "manual-2026-11-09-run",
         "date": "2026-11-09",
-        "distanceKm": 10,
-        "movingSeconds": 3780,
-        "estimated": true
+        "distanceKm": 10.01,
+        "movingSeconds": 3767,
+        "estimated": false
       }
     ],
     "weights": [
@@ -66,5 +66,28 @@
       }
     ],
     "weights": []
+  },
+  {
+    "id": "correct-run-2026-11-09-v1",
+    "runs": [],
+    "weights": [],
+    "runCorrections": [
+      {
+        "previous": {
+          "id": "manual-2026-11-09-run",
+          "date": "2026-11-09",
+          "distanceKm": 10,
+          "movingSeconds": 3780,
+          "estimated": true
+        },
+        "record": {
+          "id": "manual-2026-11-09-run",
+          "date": "2026-11-09",
+          "distanceKm": 10.01,
+          "movingSeconds": 3767,
+          "estimated": false
+        }
+      }
+    ]
   }
 ]

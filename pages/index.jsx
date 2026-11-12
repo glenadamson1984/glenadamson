@@ -9,6 +9,8 @@ import { DEFAULT_SOBRIETY, sobrietyProgress } from "../src/lib/sobriety.mjs";
 import DataManager from "../src/components/DataManager";
 import YearSelector from "../src/components/YearSelector";
 import YearOutlook from "../src/components/YearOutlook";
+import YearTotals from "../src/components/YearTotals";
+import Trending from "../src/components/Trending";
 import updates from "../src/data/updates.json";
 import { applyHistory, applyUpdates } from "../src/lib/history.mjs";
 import { loadData, saveData } from "../src/lib/storage.mjs";
@@ -25,7 +27,7 @@ import { yearColor } from "../src/lib/series.mjs";
 const ProgressChart = dynamic(() => import("../src/components/ProgressChart"), {
   ssr: false,
 });
-const TABS = ["Distance", "Pace", "Weight", "Sobriety"];
+const TABS = ["Distance", "Pace", "Weight", "Sobriety", "Trending"];
 const km = (value) => (value == null ? "—" : value.toFixed(2));
 const shortDate = (value) =>
   new Date(`${value}T12:00:00`).toLocaleDateString("en-GB", {
@@ -52,6 +54,8 @@ export default function Home() {
   const [showManager, setShowManager] = useState(false),
     [blocked, setBlocked] = useState(false),
     [storageError, setStorageError] = useState("");
+  // Hydrate from browser storage after SSR, then subscribe to external changes.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const tick = () => setNow(new Date());
     tick();
@@ -81,6 +85,7 @@ export default function Home() {
       window.removeEventListener("storage", changed);
     };
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
   function save(next, recovery = false) {
     if (blocked && !recovery)
       throw new Error("Resolve the browser storage warning before editing.");
@@ -119,8 +124,8 @@ export default function Home() {
     week = summary?.week;
   const recordedYears = [
     ...new Set(
-      (tab === "Weight" ? data?.weights || [] : data?.runs || []).map((r) =>
-        tab === "Weight" ? Number(r.date.slice(0, 4)) : isoWeek(r.date).year
+      (tab === "Weight" ? data?.weights || [] : data?.runs || []).flatMap((r) =>
+        tab === "Weight" ? [Number(r.date.slice(0, 4))] : [isoWeek(r.date).year, Number(r.date.slice(0, 4))]
       )
     ),
   ];
@@ -179,23 +184,21 @@ export default function Home() {
         Skip to dashboard
       </a>
       <header className="site-header">
-        <Link href="/">
-          <a className="brand">
-            <span className="brand-icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none">
-                <path
-                  d="M3 17h7l4-10 5 19 4-9h6"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-            <span>
-              RUNNING<span className="brand-light"> / PROGRESS</span>
-            </span>
-          </a>
+        <Link href="/" className="brand">
+          <span className="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path
+                d="M3 17h7l4-10 5 19 4-9h6"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <span>
+            RUNNING<span className="brand-light"> / PROGRESS</span>
+          </span>
         </Link>
         <div className="header-right">
           <span className="personal-label">GLEN ADAMSON · PERSONAL LOG</span>
@@ -407,7 +410,7 @@ export default function Home() {
                 ))}
               </div>
               <span className="muted">
-                Always comparing week {week}: {year} vs {comparison}
+                {tab === "Trending" ? "Completed weeks · EMA outlook" : <>Always comparing week {week}: {year} vs {comparison}</>}
               </span>
             </div>
             <section
@@ -421,6 +424,8 @@ export default function Home() {
                   blocked={blocked}
                   onSave={(config) => save({ ...data, sobriety: config })}
                 />
+              ) : tab === "Trending" ? (
+                <Trending runs={data.runs} today={today} />
               ) : (
                 <>
                   <YearSelector
@@ -519,6 +524,15 @@ export default function Home() {
                       </p>
                     </div>
                   </section>
+                  {tab === "Distance" && (
+                    <YearTotals
+                      runs={data.runs}
+                      years={chartYears}
+                      year={year}
+                      comparison={comparison}
+                      today={today}
+                    />
+                  )}
                 </>
               )}
             </section>

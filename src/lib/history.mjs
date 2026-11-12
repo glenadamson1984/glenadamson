@@ -21,7 +21,7 @@ export function applyUpdates(data, updates) {
     if (result.imports?.includes(update.id)) continue;
     let correctedRuns = result.runs;
     for (const { previous, record } of update.runCorrections || []) {
-      correctedRuns = correctedRuns.map(run => run.id === previous.id && run.distanceKm === previous.distanceKm && run.movingSeconds === previous.movingSeconds && run.estimated === previous.estimated ? record : run);
+      correctedRuns = correctedRuns.map(run => run.id === previous.id && (!previous.date || run.date === previous.date) && run.distanceKm === previous.distanceKm && run.movingSeconds === previous.movingSeconds && run.estimated === previous.estimated ? record : run);
     }
     const runs = (update.runs || []).filter(record => !result.runs.some(r => r.id === record.id || r.date === record.date));
     const weights = (update.weights || []).filter(record => !result.weights.some(r => r.id === record.id || (r.date === record.date && (!r.time || r.time === record.time))));

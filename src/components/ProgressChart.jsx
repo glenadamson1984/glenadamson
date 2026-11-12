@@ -10,13 +10,13 @@ import {
 } from "recharts";
 import { calendarLabel, formatPace, TARGET_KG } from "../lib/progress.mjs";
 import { yearColor } from "../lib/series.mjs";
-function ChartTooltip({ active, payload, label, mode }) {
+function ChartTooltip({ active, payload, label, mode, calendar }) {
   if (!active || !payload?.length) return null;
   const actual = payload.filter((p) => p.value != null);
   if (!actual.length) return null;
   return (
     <div className="chart-tooltip">
-      <strong>{mode === "weight" ? calendarLabel(label) : label}</strong>
+      <strong>{mode === "weight" || calendar ? calendarLabel(label) : label}</strong>
       {actual.map((p) => {
         const year = p.dataKey.match(/\d{4}/)?.[0];
         const date = p.payload[`date${year}`];
@@ -43,6 +43,8 @@ export default function ProgressChart({
   mode,
   empty,
   annual = false,
+  calendar = false,
+  cumulative = false,
   selectedWeek,
   primaryYear = years[0],
   comparisonYear = years[1],
@@ -54,7 +56,9 @@ export default function ProgressChart({
       className="chart-wrap"
       role="img"
       aria-label={
-        weight
+        cumulative
+          ? "Cumulative recorded running distance by calendar year, aligned by month and day."
+          : weight
           ? "Actual weight observations by month and day. Individual observations are available in Manage data."
           : `${
               annual
@@ -93,11 +97,12 @@ export default function ProgressChart({
             <CartesianGrid stroke="#ffffff0d" vertical={false} />
             <XAxis
               dataKey="day"
-              type={weight ? "number" : "category"}
+              type={weight || calendar ? "number" : "category"}
               domain={
-                weight ? [(min) => Math.max(1, min - 2), 366.999] : undefined
+                calendar ? [1, 366] : weight ? [(min) => Math.max(1, min - 2), 366.999] : undefined
               }
-              tickFormatter={weight ? calendarLabel : undefined}
+              tickFormatter={weight || calendar ? calendarLabel : undefined}
+              ticks={calendar ? [1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336, 366] : undefined}
               tick={{ fill: "#a7a7ad", fontSize: 12 }}
               tickLine={false}
               axisLine={false}
@@ -124,7 +129,7 @@ export default function ProgressChart({
               axisLine={false}
             />
             <Tooltip
-              content={<ChartTooltip mode={mode} />}
+              content={<ChartTooltip mode={mode} calendar={calendar} />}
               cursor={{ stroke: "#ffffff30", strokeDasharray: "4 4" }}
               filterNull
             />
@@ -168,19 +173,19 @@ export default function ProgressChart({
             {years.map((year, i) => (
               <Line
                 key={year}
-                type="linear"
+                type={cumulative ? "stepAfter" : "linear"}
                 dataKey={`y${year}`}
                 name={`${year}${pace ? " weekly average" : ""}`}
                 stroke={yearColor(year, primaryYear, comparisonYear)}
                 strokeWidth={3}
-                dot={{
+                dot={cumulative ? false : {
                   r: weight ? 4 : 3,
                   fill: yearColor(year, primaryYear, comparisonYear),
                   stroke: "#262626",
                   strokeWidth: 2,
                 }}
                 activeDot={{ r: 7, strokeWidth: 3 }}
-                connectNulls={weight}
+                connectNulls={weight || cumulative}
                 isAnimationActive={false}
               />
             ))}

@@ -4,6 +4,8 @@ A personal running dashboard replacing Modern Investor. Built with Next.js, Reac
 
 ## Run locally
 
+Use Node.js **26 LTS** (the verified version is **26.13.1**, also recorded in `.nvmrc`). Vercel uses the `26.x` engine in `package.json`, allowing subsequent Node 26 patch updates.
+
 ```sh
 npm ci
 npm run dev
@@ -12,6 +14,16 @@ npm run lint
 npm run build
 npm start
 ```
+
+The dashboard uses Next.js 16, React 19 and Recharts 3. Linting runs through the ESLint CLI with the Next.js flat configuration. The existing Pages Router and browser backup format are retained.
+
+## Cumulative years and trends
+
+The bottom Distance chart accumulates recorded kilometres from January 1 in each calendar year. Month/day alignment handles leap years; days without logged runs stay flat, absent years stay empty, and the current year stops at today. The year switches control its visible lines.
+
+Trending shows the last 26 completed ISO weeks, with distance and distance-weighted weekly pace plus an exponential moving average. Choose 4, 8 or 12 recorded weeks for smoothing (`alpha = 2 / (span + 1)`). Unrecorded weeks are gaps and are skipped by the EMA; zero-distance-only records affect distance but not pace. Four dashed outlook points hold the latest EMA constant after at least two relevant recorded weeks. This is a baseline estimate, including any estimated activities, rather than a prediction of improvement. Current incomplete weeks and future activities are excluded.
+
+The exact 9 November 2026 run replaces its original estimate: 10.01 km in 1:02:47 (3,767 seconds), rounded pace 6:16/km. A one-time correction updates unchanged original estimates in existing browser logs and preserves custom edits or deleted records.
 
 The homepage has Distance, Pace and Weight tabs, accessible on mobile and desktop. Old investment, admin, authentication and API routes have been removed, along with Firebase and investment dependencies. No Firebase or other service credentials are needed. Existing hosting can continue building this repository with `npm run build`.
 

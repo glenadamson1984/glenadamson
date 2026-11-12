@@ -1458,3 +1458,10 @@ footer > span:last-child {
 .goal-grid .metric:nth-child(2) .metric-value { color:var(--green); }
 .goal-grid .metric p { font-size:11px; line-height:1.6; }
 @media(max-width:600px){.goal-grid{gap:10px;margin:18px 0}.goal-grid .metric{padding:16px 12px}.goal-grid .metric:first-child{display:block;grid-column:auto}.goal-grid .metric:first-child .metric-value{font-size:29px;margin:12px 0 8px}.goal-grid .metric p,.goal-grid .metric:first-child p{font-size:9px}.goal-grid .metric-label{font-size:8px;letter-spacing:.7px}}
+.trend-smoothing { display: grid; gap: 8px; color: var(--muted); font-size: 12px; }
+.trend-smoothing select { max-width: 100%; }
+@media (max-width: 600px) {
+  .tabs { flex-wrap: wrap; }
+  .tabs button { flex: 1 0 28%; }
+  .trend-smoothing { width: 100%; }
+}
