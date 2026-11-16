@@ -202,6 +202,7 @@ export default function Home() {
         </Link>
         <div className="header-right">
           <span className="personal-label">GLEN ADAMSON · PERSONAL LOG</span>
+          <Link href="/football" className="football-login-link">Football Login</Link>
           <button onClick={openManager}>Manage data →</button>
         </div>
       </header>

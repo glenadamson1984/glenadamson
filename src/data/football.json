@@ -1,0 +1,301 @@
+{
+  "blocks": {
+    "1": [
+      {
+        "week": 1,
+        "home": "St. Mary's Colts",
+        "away": "Annagh Youth Tigers",
+        "hg": 4.0,
+        "ag": 4.0
+      },
+      {
+        "week": 1,
+        "home": "Seagoe",
+        "away": "Tandragee Rovers",
+        "hg": null,
+        "ag": null
+      },
+      {
+        "week": 2,
+        "home": "Ridgeway Mill Youth Blues",
+        "away": "Armagh City Colts",
+        "hg": 3.0,
+        "ag": 4.0
+      },
+      {
+        "week": 2,
+        "home": "Annagh Youth Tigers",
+        "away": "Markethill Swifts Colts",
+        "hg": 3.0,
+        "ag": 1.0
+      },
+      {
+        "week": 2,
+        "home": "Seagoe",
+        "away": "St. Mary's Colts",
+        "hg": null,
+        "ag": null
+      },
+      {
+        "week": 3,
+        "home": "Armagh City Colts",
+        "away": "Annagh Youth Tigers",
+        "hg": null,
+        "ag": null
+      },
+      {
+        "week": 3,
+        "home": "Ridgeway Mill Youth Blues",
+        "away": "Tandragee Rovers",
+        "hg": 2.0,
+        "ag": 1.0
+      },
+      {
+        "week": 3,
+        "home": "Markethill Swifts Colts",
+        "away": "Seagoe",
+        "hg": 1.0,
+        "ag": 5.0
+      },
+      {
+        "week": 4,
+        "home": "Tandragee Rovers",
+        "away": "Armagh City Colts",
+        "hg": 1.0,
+        "ag": 1.0
+      },
+      {
+        "week": 4,
+        "home": "Seagoe",
+        "away": "Annagh Youth Tigers",
+        "hg": 5.0,
+        "ag": 1.0
+      },
+      {
+        "week": 4,
+        "home": "St. Mary's Colts",
+        "away": "Ridgeway Mill Youth Blues",
+        "hg": 4.0,
+        "ag": 0.0
+      },
+      {
+        "week": 5,
+        "home": "Armagh City Colts",
+        "away": "Seagoe",
+        "hg": 2.0,
+        "ag": 2.0
+      },
+      {
+        "week": 5,
+        "home": "Tandragee Rovers",
+        "away": "St. Mary's Colts",
+        "hg": 3.0,
+        "ag": 6.0
+      },
+      {
+        "week": 5,
+        "home": "Ridgeway Mill Youth Blues",
+        "away": "Markethill Swifts Colts",
+        "hg": 3.0,
+        "ag": 2.0
+      },
+      {
+        "week": 6,
+        "home": "St. Mary's Colts",
+        "away": "Armagh City Colts",
+        "hg": 1.0,
+        "ag": 0.0
+      },
+      {
+        "week": 6,
+        "home": "Markethill Swifts Colts",
+        "away": "Tandragee Rovers",
+        "hg": 4.0,
+        "ag": 3.0
+      },
+      {
+        "week": 6,
+        "home": "Ridgeway Mill Youth Blues",
+        "away": "Annagh Youth Tigers",
+        "hg": 7.0,
+        "ag": 3.0
+      },
+      {
+        "week": 7,
+        "home": "Armagh City Colts",
+        "away": "Ambassadors City Stars",
+        "hg": null,
+        "ag": null
+      },
+      {
+        "week": 7,
+        "home": "St. Mary's Colts",
+        "away": "Markethill Swifts Colts",
+        "hg": null,
+        "ag": null
+      },
+      {
+        "week": 7,
+        "home": "Seagoe",
+        "away": "Ridgeway Mill Youth Blues",
+        "hg": 2.0,
+        "ag": 1.0
+      },
+      {
+        "week": 7,
+        "home": "Tandragee Rovers",
+        "away": "Annagh Youth Tigers",
+        "hg": 1.0,
+        "ag": 5.0
+      }
+    ],
+    "2": [
+      {
+        "week": 9,
+        "home": "Annagh Youth Tigers",
+        "away": "Rathfriland Youth",
+        "hg": 2.0,
+        "ag": 3.0
+      },
+      {
+        "week": 9,
+        "home": "St. Mary's Colts",
+        "away": "Seagoe",
+        "hg": 2.0,
+        "ag": 1.0
+      },
+      {
+        "week": 9,
+        "home": "Dromore Amateurs Swifts",
+        "away": "Tandragee Rovers",
+        "hg": 2.0,
+        "ag": 3.0
+      },
+      {
+        "week": 9,
+        "home": "Armagh City Colts",
+        "away": "Ridgeway Mill Youth Blues",
+        "hg": 5.0,
+        "ag": 3.0
+      },
+      {
+        "week": 10,
+        "home": "Hanover Youth Colts",
+        "away": "Bourneview Mill Minis",
+        "hg": 5.0,
+        "ag": 2.0
+      },
+      {
+        "week": 10,
+        "home": "Rathfriland Youth",
+        "away": "Armagh City Colts",
+        "hg": 2.0,
+        "ag": 3.0
+      },
+      {
+        "week": 10,
+        "home": "Tandragee Rovers",
+        "away": "Dromore Amateurs Swifts",
+        "hg": 4.0,
+        "ag": 7.0
+      },
+      {
+        "week": 10,
+        "home": "Annagh Youth Tigers",
+        "away": "St. Mary's Colts",
+        "hg": 1.0,
+        "ag": 3.0
+      },
+      {
+        "week": 11,
+        "home": "Hanover Youth Colts",
+        "away": "Armagh City Colts",
+        "hg": 2.0,
+        "ag": 1.0
+      },
+      {
+        "week": 11,
+        "home": "Ridgeway Mill Youth Blues",
+        "away": "Dromore Amateurs Swifts",
+        "hg": 1.0,
+        "ag": 4.0
+      },
+      {
+        "week": 11,
+        "home": "Seagoe",
+        "away": "Annagh Youth Tigers",
+        "hg": 0.0,
+        "ag": 4.0
+      },
+      {
+        "week": 11,
+        "home": "Bourneview Mill Minis",
+        "away": "Tandragee Rovers",
+        "hg": 3.0,
+        "ag": 2.0
+      }
+    ]
+  },
+  "block1Teams": [
+    "Ambassadors City Stars",
+    "Annagh Youth Tigers",
+    "Armagh City Colts",
+    "Markethill Swifts Colts",
+    "Ridgeway Mill Youth Blues",
+    "Seagoe",
+    "St. Mary's Colts",
+    "Tandragee Rovers"
+  ],
+  "arrivals": [
+    {
+      "team": "Bourneview Mill Minis",
+      "league": "Blue",
+      "group": "2016 Under 11 Earthquakes",
+      "p": 5,
+      "w": 0,
+      "d": 0,
+      "l": 5,
+      "gf": 6.0,
+      "ga": 28.0,
+      "pts": 0
+    },
+    {
+      "team": "Dromore Amateurs Swifts",
+      "league": "Blue",
+      "group": "2016 Under 11 Earthquakes",
+      "p": 5,
+      "w": 2,
+      "d": 0,
+      "l": 3,
+      "gf": 13.0,
+      "ga": 18.0,
+      "pts": 6
+    },
+    {
+      "team": "Hanover Youth Colts",
+      "league": "Yellow",
+      "group": "2016 Under 11 Hurricanes",
+      "p": 4,
+      "w": 3,
+      "d": 1,
+      "l": 0,
+      "gf": 15.0,
+      "ga": 7.0,
+      "pts": 10
+    },
+    {
+      "team": "Rathfriland Youth",
+      "league": "Yellow",
+      "group": "2016 Under 11 Hurricanes",
+      "p": 5,
+      "w": 5,
+      "d": 0,
+      "l": 0,
+      "gf": 28.0,
+      "ga": 10.0,
+      "pts": 15
+    }
+  ],
+  "source": "https://docs.google.com/spreadsheets/d/1MGjpydnGUSzjm-43za-KF37gaiNMngYIMvjBk_LyQ4o/edit",
+  "updated": "16 November 2026"
+}
