@@ -89,5 +89,42 @@
         }
       }
     ]
+  },
+  {
+    "id": "daily-records-2026-11-13",
+    "runs": [
+      {
+        "id": "strava-20972711738",
+        "date": "2026-11-13",
+        "distanceKm": 10.02,
+        "movingSeconds": 3544,
+        "estimated": false
+      }
+    ],
+    "weights": []
+  },
+  {
+    "id": "daily-records-2026-11-16",
+    "runs": [
+      {
+        "id": "strava-21008141987",
+        "date": "2026-11-16",
+        "distanceKm": 10.12,
+        "movingSeconds": 3547,
+        "estimated": false
+      }
+    ],
+    "weights": []
+  },
+  {
+    "id": "daily-records-2026-11-15-weight",
+    "runs": [],
+    "weights": [
+      {
+        "id": "weight-2026-11-15",
+        "date": "2026-11-15",
+        "weightKg": 79
+      }
+    ]
   }
 ]
