@@ -27,9 +27,9 @@
 .football-table caption { text-align:left; color:#aaaab0; font-size:12px; padding-bottom:12px; }
 .football-table th,.football-table td { padding:14px 10px; text-align:right; border-bottom:1px solid #ffffff10; white-space:nowrap; }
 .football-table thead th { color:#aaaab0; font-size:11px; font-weight:500; }
-.football-table tbody th { text-align:left; font-weight:500; }
+.football-table tbody th { text-align:left; font-weight:500; font-size:13px; color:#f5f5f5; text-transform:none; letter-spacing:normal; }
 .football-table th:nth-child(2),.football-table td:nth-child(2) { text-align:left; }
-.football-table .our-team { color:#ffad64; }
+.football-table .our-team th,.football-table .our-team td { color:#ffad64; }
 .football-table .our-team th { font-weight:700; }
 .football-table td:nth-last-child(2) { font-weight:700; }
 .arrivals th:first-child { text-align:left; }
