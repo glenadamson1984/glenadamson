@@ -13,7 +13,20 @@ export async function getServerSideProps({req,res}) {
 }
 
 function LeagueTable({rows}) {
-  return <div className="football-scroll"><table className="football-table"><caption>SSG Green League — 2016 Under 11 Tornadoes</caption><thead><tr>{['Pos','Team','P','W','D','L','GF','GA','GD','Pts','Pts/game'].map(h=><th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{rows.map((q,i)=><tr key={q.team} className={q.team==='Tandragee Rovers'?'our-team':''}><td>{q.p?i+1:'—'}</td><th scope="row">{q.team}</th>{['p','w','d','l','gf','ga','gd','pts'].map(k=><td key={k}>{k==='gd'&&q[k]>0?'+':''}{q[k]}</td>)}<td>{q.p?(q.pts/q.p).toFixed(2):'—'}</td></tr>)}</tbody></table></div>;
+  return <div className="football-scroll"><table className="football-table">
+    <caption>SSG Green League — 2016 Under 11 Tornadoes</caption>
+    <thead><tr>{['Pos','Team','P','W','D','L','GF','GA','GD','Pts','Pts/game'].map(h=><th key={h} scope="col">{h}</th>)}</tr></thead>
+    <tbody>{rows.map((q,i)=>{
+      const ours=q.team==='Tandragee Rovers';
+      const cellStyle={color:ours?'#ffad64':'#f5f5f5'};
+      return <tr key={q.team} className={ours?'our-team':''}>
+        <td style={cellStyle}>{q.p?i+1:'—'}</td>
+        <th style={cellStyle} scope="row">{q.team}</th>
+        {['p','w','d','l','gf','ga','gd','pts'].map(k=><td key={k} style={cellStyle}>{k==='gd'&&q[k]>0?'+':''}{q[k]}</td>)}
+        <td style={cellStyle}>{q.p?(q.pts/q.p).toFixed(2):'—'}</td>
+      </tr>;
+    })}</tbody>
+  </table></div>;
 }
 export default function Football({data}) {
   const [block,setBlock]=useState(2),[pin,setPin]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false);
