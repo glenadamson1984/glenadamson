@@ -1,5 +1,6 @@
+import SiteFooter from '../src/components/SiteFooter';
+import SiteHeader from '../src/components/SiteHeader';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useState } from 'react';
 import { standings } from '../src/lib/football.mjs';
 
@@ -61,7 +62,7 @@ export default function Football({data}) {
   const us=rows.find(q=>q.team===teamName);
   return <div className="football-theme" style={{'--team-accent':teamColor}}><Head><title>Football Progress | Tandragee Rovers 2016</title><meta name="robots" content="noindex,nofollow"/></Head>
     <a className="skip-link" href="#football-main">Skip to content</a>
-    <header className="site-header"><Link href="/football" className="brand"><span className="football-mark" aria-hidden="true">TR</span><span>FOOTBALL<span className="brand-light"> / PROGRESS</span></span></Link><div className="header-right"><Link href="/" className="football-link">Running progress ↗</Link>{data&&<button onClick={logout} disabled={busy}>Log out</button>}</div></header>
+    <SiteHeader active="football" actions={data&&<button onClick={logout} disabled={busy}>Log out</button>}/>
     <main id="football-main"><section className="hero"><div>{data?<nav className="football-team-tabs" aria-label="Tandragee teams">{['tornadoes','hurricanes'].map(id=><button key={id} aria-pressed={team===id} onClick={()=>setTeam(id)}>TANDRAGEE ROVERS {id.toUpperCase()} 2016</button>)}</nav>:<span className="eyebrow">TANDRAGEE ROVERS 2016</span>}<h1><span style={{color:data?teamColor:undefined,fontWeight:600}}>26–27</span> season <span>Progress</span><span className="title-dot">.</span></h1><p>{data?`${league} League · Under 11 ${group} · SSG`:"Under 11 · SSG"}</p></div>{data&&<span className="football-season">2026 / 2027</span>}</section>
     {!data?<section className="football-card football-login"><span className="eyebrow">FOOTBALL LOGIN</span><h2>Your season, in one place.</h2><p>Enter your PIN to view the team’s progress.</p><form onSubmit={login}><label htmlFor="football-pin">PIN</label><input id="football-pin" type="password" inputMode="numeric" pattern="[0-9]{4}" maxLength={4} autoComplete="current-password" required value={pin} onChange={e=>setPin(e.target.value)} aria-describedby={error?'login-error':undefined}/><button className="primary" disabled={busy}>{busy?'Checking…':'Unlock football progress →'}</button></form>{error&&<p id="login-error" role="alert">{error}</p>}</section>:<>
     <nav className="dashboard-controls" aria-label="Season blocks"><div className="tabs football-tabs">{[1,2,3,4].map(n=><button key={n} aria-current={block===n?'page':undefined} onClick={()=>setBlock(n)} className={block===n?'selected':''}>Block {n}</button>)}</div><span className="personal-label">UPDATED {data.updated.toUpperCase()}</span></nav>
@@ -76,5 +77,5 @@ export default function Football({data}) {
     </>}
     <footer className="football-footer"><p>Unofficial ability-group monitoring · Updated as results are reviewed.</p><a href={data.source} target="_blank" rel="noreferrer">Source results spreadsheet ↗</a></footer>{error&&<p role="alert">{error}</p>}
     </>}
-    </main></div>;
+    <SiteFooter/></main></div>;
 }

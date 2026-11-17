@@ -1,9 +1,3 @@
-export const DEFAULT_SOBRIETY = Object.freeze({
-  startedAt: "2025-08-25T07:00:00.000Z",
-  dailySpending: 4,
-  dailyCalories: 306,
-  currency: "GBP",
-});
 export function validateSobriety(value) {
   if (
     !value ||

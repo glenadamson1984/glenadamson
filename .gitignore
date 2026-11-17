@@ -2,6 +2,12 @@
 
 # dependencies
 /node_modules
+**/node_modules/
+demos/**/dist/
+demos/**/.embroider/
+demos/**/.vite/
+demos/**/tmp/
+demos/**/.cache/
 /.pnp
 .pnp.js
 

@@ -1,3 +1,4 @@
+import { DEFAULT_SOBRIETY } from '../src/server/private-defaults.mjs';
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -417,7 +418,7 @@ test("intelligent briefing adapts to an unmet target, tied record, new record an
 });
 
 test("sobriety counter uses the exact start instant, elapsed days and sensible estimates", async () => {
-  const { DEFAULT_SOBRIETY, sobrietyProgress } = await import(
+  const { sobrietyProgress } = await import(
     "../src/lib/sobriety.mjs"
   );
   const s = sobrietyProgress(DEFAULT_SOBRIETY, "2026-11-08T11:33:00Z");
@@ -435,7 +436,7 @@ test("sobriety counter uses the exact start instant, elapsed days and sensible e
   assert.equal(next.seconds, 1);
 });
 test("sobriety settings survive validation, local storage and JSON/CSV backup and reject invalid values", async () => {
-  const { DEFAULT_SOBRIETY, validateSobriety } = await import(
+  const { validateSobriety } = await import(
     "../src/lib/sobriety.mjs"
   );
   const data = {

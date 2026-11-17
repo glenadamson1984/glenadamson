@@ -1,4 +1,30 @@
-# Running Progress
+# Glen Adamson
+
+Personal website with Home, About, Portfolio, Running and Football pages. The running dashboard now lives at `/running`; its browser storage key is unchanged. Home and About use the approved AI pixel portrait in `public/glen-pixel-portrait.png`. The original photograph is not published.
+
+## Portfolio and private sections
+
+`/portfolio` links Modern Warehouse and the independently built Ember salon demo. `/portfolio/phorest` is a tailored application introduction, not an application submission or an endorsed Phorest product.
+
+Master login at `/login` unlocks the Sobriety tab on `/running`. Football has its own session. Both use the temporary shared PIN 3217 unless `MASTER_PIN` or `FOOTBALL_PIN` overrides it. Set `MASTER_SESSION_SECRET` and `FOOTBALL_SESSION_SECRET` to independent private values before treating this as strong access control. Public Git history still contains earlier defaults. The master-protected running response uses `private, no-store` and only includes personal defaults after checking the master cookie. Browser storage and backup compatibility are preserved.
+
+## Ember salon prototype
+
+Source is in `demos/salon-demo`. It uses actual Ember, Glimmer components and tracked state, with fictional clients and local browser persistence. Reset demo restores eight original bookings after an inline confirmation. Booking validation checks stylist overlaps across the full service duration. This is not a production salon backend.
+
+To rebuild after editing the demo:
+
+```sh
+cd demos/salon-demo
+npm ci
+cd ../..
+npm run test:salon-demo
+npm run build:salon-demo
+```
+
+Commit the resulting `public/demos/salon-ops` assets together with the source. Vercel's normal Next.js build serves that static output without installing the nested Ember toolchain. The Windows packaging helper uses directory junctions/file copies for build links, without changing OS settings.
+
+## Running Progress
 
 A personal running dashboard replacing Modern Investor. Built with Next.js, React and Recharts, retaining the charcoal, pink, Poppins and Inter visual theme.
 
@@ -25,7 +51,7 @@ Trending shows the last 26 completed ISO weeks, with distance and distance-weigh
 
 The exact 9 November 2026 run replaces its original estimate: 10.01 km in 1:02:47 (3,767 seconds), rounded pace 6:16/km. A one-time correction updates unchanged original estimates in existing browser logs and preserves custom edits or deleted records.
 
-The homepage has Distance, Pace and Weight tabs, accessible on mobile and desktop. Old investment, admin, authentication and API routes have been removed, along with Firebase and investment dependencies. No Firebase or other service credentials are needed. Existing hosting can continue building this repository with `npm run build`.
+The running page has Distance, Pace, Weight and Trending tabs. Sobriety is visible only after master login. Old investment and Firebase dependencies remain removed. Existing hosting continues building this repository with `npm run build`.
 
 ## Activity source
 

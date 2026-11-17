@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function SiteFooter(){return <footer className="personal-footer"><span>GLEN ADAMSON <span className="footer-dot">/</span> Always something to explore.</span><div><Link href="/portfolio">Portfolio</Link><Link href="/about">About</Link><a href="https://modern-software.co.uk" target="_blank" rel="noreferrer">Modern Software ↗</a><Link href="/login">Master login</Link></div></footer>;}
