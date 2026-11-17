@@ -126,5 +126,18 @@
         "weightKg": 79
       }
     ]
+  },
+  {
+    "id": "daily-records-2026-11-17",
+    "runs": [
+      {
+        "id": "strava-21022204907",
+        "date": "2026-11-17",
+        "distanceKm": 8.2,
+        "movingSeconds": 3023,
+        "estimated": false
+      }
+    ],
+    "weights": []
   }
 ]
