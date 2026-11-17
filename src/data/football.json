@@ -297,5 +297,419 @@
     }
   ],
   "source": "https://docs.google.com/spreadsheets/d/1MGjpydnGUSzjm-43za-KF37gaiNMngYIMvjBk_LyQ4o/edit",
-  "updated": "16 November 2026"
+  "updated": "17 November 2026",
+  "hurricanes": {
+    "blocks": {
+      "1": [
+        {
+          "week": 1,
+          "home": "Dromore Amateurs Colts",
+          "away": "Ambassadors Bears",
+          "hg": 2.0,
+          "ag": 2.0
+        },
+        {
+          "week": 1,
+          "home": "Tandragee Rovers Youth",
+          "away": "Banbridge Rangers",
+          "hg": 5.0,
+          "ag": 6.0
+        },
+        {
+          "week": 2,
+          "home": "Hanover Youth Colts",
+          "away": "Ambassadors Bears",
+          "hg": 4.0,
+          "ag": 4.0
+        },
+        {
+          "week": 2,
+          "home": "Banbridge Rangers",
+          "away": "Dromore Amateurs Colts",
+          "hg": 2.0,
+          "ag": 2.0
+        },
+        {
+          "week": 2,
+          "home": "Lurgan Celtic White",
+          "away": "Tandragee Rovers Youth",
+          "hg": 6.0,
+          "ag": 0.0
+        },
+        {
+          "week": 3,
+          "home": "Banbridge Rangers",
+          "away": "Lurgan Celtic White",
+          "hg": 6.0,
+          "ag": 6.0
+        },
+        {
+          "week": 3,
+          "home": "Ambassadors Bears",
+          "away": "Dromore Amateurs Colts",
+          "hg": 1.0,
+          "ag": 4.0
+        },
+        {
+          "week": 3,
+          "home": "Tandragee Rovers Youth",
+          "away": "Rathfriland Youth",
+          "hg": 4.0,
+          "ag": 6.0
+        },
+        {
+          "week": 4,
+          "home": "Dromore Amateurs Colts",
+          "away": "Rathfriland Colts",
+          "hg": 2.0,
+          "ag": 1.0
+        },
+        {
+          "week": 4,
+          "home": "Lurgan Celtic White",
+          "away": "Rathfriland Youth",
+          "hg": 3.0,
+          "ag": 6.0
+        },
+        {
+          "week": 4,
+          "home": "Banbridge Rangers",
+          "away": "Ambassadors Bears",
+          "hg": 2.0,
+          "ag": 1.0
+        },
+        {
+          "week": 5,
+          "home": "Lurgan Celtic White",
+          "away": "Dromore Amateurs Colts",
+          "hg": 4.0,
+          "ag": 3.0
+        },
+        {
+          "week": 5,
+          "home": "Rathfriland Colts",
+          "away": "Hanover Youth Colts",
+          "hg": 0.0,
+          "ag": 3.0
+        },
+        {
+          "week": 5,
+          "home": "Rathfriland Youth",
+          "away": "Banbridge Rangers",
+          "hg": 8.0,
+          "ag": 0.0
+        },
+        {
+          "week": 5,
+          "home": "Tandragee Rovers Youth",
+          "away": "Ambassadors Bears",
+          "hg": 0.0,
+          "ag": 3.0
+        },
+        {
+          "week": 6,
+          "home": "Rathfriland Youth",
+          "away": "Dromore Amateurs Colts",
+          "hg": 3.0,
+          "ag": 1.0
+        },
+        {
+          "week": 6,
+          "home": "Seagoe fc",
+          "away": "Rathfriland Colts",
+          "hg": 3.0,
+          "ag": 2.0
+        },
+        {
+          "week": 6,
+          "home": "Ambassadors Bears",
+          "away": "Lurgan Celtic White",
+          "hg": 0.0,
+          "ag": 6.0
+        },
+        {
+          "week": 6,
+          "home": "Banbridge Rangers",
+          "away": "Hanover Youth Colts",
+          "hg": 2.0,
+          "ag": 5.0
+        },
+        {
+          "week": 7,
+          "home": "Dromore Amateurs Colts",
+          "away": "Tandragee Rovers Youth",
+          "hg": 5.0,
+          "ag": 1.0
+        },
+        {
+          "week": 7,
+          "home": "Rathfriland Youth",
+          "away": "Ambassadors Bears",
+          "hg": 5.0,
+          "ag": 2.0
+        },
+        {
+          "week": 7,
+          "home": "Rathfriland Colts",
+          "away": "Banbridge Rangers",
+          "hg": 6.0,
+          "ag": 3.0
+        },
+        {
+          "week": 7,
+          "home": "Lurgan Celtic White",
+          "away": "Hanover Youth Colts",
+          "hg": 1.0,
+          "ag": 3.0
+        }
+      ],
+      "2": [
+        {
+          "week": 9,
+          "home": "Dromore Amateurs Colts",
+          "away": "Banbridge Rangers",
+          "hg": 3.0,
+          "ag": 0.0
+        },
+        {
+          "week": 9,
+          "home": "Tandragee Rovers Youth",
+          "away": "Lurgan Celtic White",
+          "hg": 1.0,
+          "ag": 4.0
+        },
+        {
+          "week": 10,
+          "home": "Craigavon City Colts",
+          "away": "Dromore Amateurs Colts",
+          "hg": 1.0,
+          "ag": 9.0
+        },
+        {
+          "week": 10,
+          "home": "Lurgan Celtic White",
+          "away": "Banbridge Rangers",
+          "hg": 1.0,
+          "ag": 1.0
+        },
+        {
+          "week": 10,
+          "home": "Rathfriland Colts",
+          "away": "Ambassadors Bears",
+          "hg": 4.0,
+          "ag": 4.0
+        },
+        {
+          "week": 10,
+          "home": "Markethill Swifts Colts",
+          "away": "Tandragee Rovers Youth",
+          "hg": 3.0,
+          "ag": 3.0
+        },
+        {
+          "week": 11,
+          "home": "Dromore Amateurs Colts",
+          "away": "Lurgan Celtic White",
+          "hg": 3.0,
+          "ag": 0.0
+        },
+        {
+          "week": 11,
+          "home": "Craigavon City Colts",
+          "away": "Markethill Swifts Colts",
+          "hg": 3.0,
+          "ag": 3.0
+        },
+        {
+          "week": 11,
+          "home": "Ambassadors Bears",
+          "away": "Tandragee Rovers Youth",
+          "hg": 4.0,
+          "ag": 3.0
+        }
+      ]
+    },
+    "block1Teams": [
+      "Ambassadors Bears",
+      "Banbridge Rangers",
+      "Dromore Amateurs Colts",
+      "Hanover Youth Colts",
+      "Lurgan Celtic White",
+      "Rathfriland Colts",
+      "Rathfriland Youth",
+      "Seagoe fc",
+      "Tandragee Rovers Youth"
+    ],
+    "moves": [
+      {
+        "team": "Craigavon City Colts",
+        "direction": "Joined",
+        "league": "Not listed",
+        "group": "",
+        "stats": null
+      },
+      {
+        "team": "Markethill Swifts Colts",
+        "direction": "Joined",
+        "league": "Green",
+        "group": "Tornadoes",
+        "stats": {
+          "team": "Markethill Swifts Colts",
+          "p": 4,
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 8.0,
+          "ga": 14.0,
+          "pts": 3
+        }
+      },
+      {
+        "team": "Hanover Youth Colts",
+        "direction": "Left",
+        "league": "Green",
+        "group": "Tornadoes",
+        "stats": {
+          "team": "Hanover Youth Colts",
+          "p": 4,
+          "w": 3,
+          "d": 1,
+          "l": 0,
+          "gf": 15.0,
+          "ga": 7.0,
+          "pts": 10
+        }
+      },
+      {
+        "team": "Rathfriland Youth",
+        "direction": "Left",
+        "league": "Green",
+        "group": "Tornadoes",
+        "stats": {
+          "team": "Rathfriland Youth",
+          "p": 5,
+          "w": 5,
+          "d": 0,
+          "l": 0,
+          "gf": 28.0,
+          "ga": 10.0,
+          "pts": 15
+        }
+      },
+      {
+        "team": "Seagoe fc",
+        "direction": "Left",
+        "league": "Not listed",
+        "group": "",
+        "stats": {
+          "team": "Seagoe fc",
+          "p": 1,
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 3.0,
+          "ga": 2.0,
+          "pts": 3
+        }
+      }
+    ]
+  },
+  "moves": [
+    {
+      "team": "Bourneview Mill Minis",
+      "direction": "Joined",
+      "league": "Blue",
+      "group": "Earthquakes",
+      "stats": {
+        "team": "Bourneview Mill Minis",
+        "p": 5,
+        "w": 0,
+        "d": 0,
+        "l": 5,
+        "gf": 6.0,
+        "ga": 28.0,
+        "pts": 0
+      }
+    },
+    {
+      "team": "Dromore Amateurs Swifts",
+      "direction": "Joined",
+      "league": "Blue",
+      "group": "Earthquakes",
+      "stats": {
+        "team": "Dromore Amateurs Swifts",
+        "p": 5,
+        "w": 2,
+        "d": 0,
+        "l": 3,
+        "gf": 13.0,
+        "ga": 18.0,
+        "pts": 6
+      }
+    },
+    {
+      "team": "Hanover Youth Colts",
+      "direction": "Joined",
+      "league": "Yellow",
+      "group": "Hurricanes",
+      "stats": {
+        "team": "Hanover Youth Colts",
+        "p": 4,
+        "w": 3,
+        "d": 1,
+        "l": 0,
+        "gf": 15.0,
+        "ga": 7.0,
+        "pts": 10
+      }
+    },
+    {
+      "team": "Rathfriland Youth",
+      "direction": "Joined",
+      "league": "Yellow",
+      "group": "Hurricanes",
+      "stats": {
+        "team": "Rathfriland Youth",
+        "p": 5,
+        "w": 5,
+        "d": 0,
+        "l": 0,
+        "gf": 28.0,
+        "ga": 10.0,
+        "pts": 15
+      }
+    },
+    {
+      "team": "Ambassadors City Stars",
+      "direction": "Left",
+      "league": "Not listed",
+      "group": "",
+      "stats": {
+        "team": "Ambassadors City Stars",
+        "p": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "pts": 0
+      }
+    },
+    {
+      "team": "Markethill Swifts Colts",
+      "direction": "Left",
+      "league": "Yellow",
+      "group": "Hurricanes",
+      "stats": {
+        "team": "Markethill Swifts Colts",
+        "p": 4,
+        "w": 1,
+        "d": 0,
+        "l": 3,
+        "gf": 8.0,
+        "ga": 14.0,
+        "pts": 3
+      }
+    }
+  ]
 }

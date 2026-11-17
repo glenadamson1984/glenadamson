@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap");
 .football-login-link { border:1px solid #f7943d66; color:#ffad64; border-radius:8px; padding:10px 14px; white-space:nowrap; font-size:12px; }
+.football-team-tabs { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
+.football-team-tabs button { font-size:10px; letter-spacing:1px; font-weight:700; color:#aaaab0; text-align:left; border-color:#ffffff25; }
+.football-team-tabs button[aria-pressed="true"] { color:#7bcda4; border-color:#7bcda480; background:#7bcda412; }
 .football-login-link:hover { background:#ff922418; }
 .football-theme { --pink:#ff9224; --green:#ffad64; min-height:100vh; background:#1c1c1c; }
 .football-theme .site-header { background:#202020; height:auto; min-height:88px; padding-top:16px; padding-bottom:16px; flex-wrap:wrap; }

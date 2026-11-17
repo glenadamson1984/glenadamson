@@ -4,6 +4,23 @@ import { correctPin, createSession, validSession, maxAge } from '../src/lib/foot
 import { standings } from '../src/lib/football.mjs';
 import fs from 'node:fs';
 const data=JSON.parse(fs.readFileSync(new URL('../src/data/football.json',import.meta.url)));
+test('Hurricanes records and group changes reconcile independently',()=>{
+  const first=standings(data.hurricanes.blocks[1],data.hurricanes.block1Teams);
+  const second=standings(data.hurricanes.blocks[2]);
+  assert.equal(data.hurricanes.blocks[1].length,23);
+  assert.equal(data.hurricanes.blocks[2].length,9);
+  assert.deepEqual(first.find(q=>q.team==='Tandragee Rovers Youth'),{team:'Tandragee Rovers Youth',p:5,w:0,d:0,l:5,gf:10,ga:26,gd:-16,pts:0});
+  assert.deepEqual(second.find(q=>q.team==='Tandragee Rovers Youth'),{team:'Tandragee Rovers Youth',p:3,w:0,d:1,l:2,gf:7,ga:11,gd:-4,pts:1});
+  assert.equal(first.findIndex(q=>q.team==='Tandragee Rovers Youth'),8);
+  assert.equal(second.findIndex(q=>q.team==='Tandragee Rovers Youth'),6);
+  assert.equal(first.reduce((n,q)=>n+q.p,0),46);
+  assert.equal(second.reduce((n,q)=>n+q.p,0),18);
+  for(const rows of [first,second])assert.equal(rows.reduce((n,q)=>n+q.gd,0),0);
+  assert.equal(first.filter(q=>q.team.startsWith('Ambassadors')).length,1);
+  assert.equal(data.hurricanes.moves.find(m=>m.team==='Markethill Swifts Colts').league,'Green');
+  assert.equal(data.hurricanes.moves.find(m=>m.team==='Craigavon City Colts').stats,null);
+  assert.equal(data.hurricanes.moves.find(m=>m.team==='Hanover Youth Colts').direction,'Left');
+});
 test('tables reconcile to recorded fixtures and missing scores do not count',()=>{
   const b1=standings(data.blocks[1],data.block1Teams), b2=standings(data.blocks[2]);
   assert.deepEqual(b1.find(q=>q.team==='Tandragee Rovers'),{team:'Tandragee Rovers',p:5,w:0,d:1,l:4,gf:9,ga:18,gd:-9,pts:1});
