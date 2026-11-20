@@ -466,7 +466,7 @@ test("sobriety settings survive validation, local storage and JSON/CSV backup an
 
 test('daily screenshot updates add estimated runs and exact weights once while preserving user data',async()=>{
  const {applyUpdates}=await import('../src/lib/history.mjs');const updates=JSON.parse(fs.readFileSync(new URL('../src/data/updates.json',import.meta.url)));
- const result=applyUpdates(seed,updates);assert.equal(result.runs.length,473);assert.equal(result.weights.length,853);const run=result.runs.find(r=>r.id==='manual-2026-11-09-run');assert.equal(run.distanceKm,10.01);assert.equal(run.movingSeconds,3767);assert.equal(formatPace(run.movingSeconds/run.distanceKm),'6:16');assert.equal(run.estimated,false);
+ const result=applyUpdates(seed,updates);assert.equal(result.runs.length,472);assert.equal(result.weights.length,853);const run=result.runs.find(r=>r.id==='manual-2026-11-09-run');assert.equal(run.distanceKm,10.01);assert.equal(run.movingSeconds,3767);assert.equal(formatPace(run.movingSeconds/run.distanceKm),'6:16');assert.equal(run.estimated,false);
  const weight=result.weights.find(r=>r.id==='weight-2026-11-09T17:30');assert.equal(weight.weightKg,79.7);assert.equal(weight.time,'17:30');assert.equal(applyUpdates(result,updates),result);
  const edited={...seed,runs:[...seed.runs,{...run,id:'mine',distanceKm:10.03}],weights:[...seed.weights,{...weight,id:'mine',weightKg:79.6}]};const preserved=applyUpdates(edited,updates);assert.equal(preserved.runs.filter(r=>r.date==='2026-11-09').length,1);assert.equal(preserved.weights.find(r=>r.id==='mine').weightKg,79.6);
  const deleted={...result,runs:seed.runs,weights:seed.weights};assert.equal(applyUpdates(deleted,updates),deleted);
