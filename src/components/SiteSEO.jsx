@@ -6,7 +6,9 @@ const pages={
  '/about':['About Glen Adamson | Software Engineering & Career','Meet Glen Adamson, founder of Modern Software. Explore his software engineering career, consultancy experience, design interests and grassroots football coaching.'],
  '/portfolio':['Software Development Portfolio | Glen Adamson','Explore Glen Adamson’s working software prototypes, including Modern Warehouse, an Ember salon daybook and interactive tools. View demos and source code.'],
  '/playground':['Pixel Tennis: Glen vs Mossbyte | Glen Adamson','Play Glen versus Mossbyte: a pixel tennis game with keyboard, mouse and touch controls. A creative software experiment by Glen Adamson.'],
- '/running':['Running Progress | Glen Adamson','Glen Adamson’s running progress dashboard: distance, pace, historical comparisons and weekly trends. A personal data visualisation project.'],
+ '/running':['RunningPrep | Your Running, Compared Over Time','Explore RunningPrep: week-on-week and year-on-year running trends, pace, distance and consistency. A product preview by Modern Software.'],
+ '/coaching':['Football Coaching Portadown | Glen Adamson','Explore a future one-to-one football coaching concept in Portadown, Northern Ireland. Parent expressions of interest; lessons are not yet available.'],
+ '/pixel-me':['Pixel Me | Free Photo to Pixel Art Tool','Convert a photo into pixel art in your browser. Original, pink and mint palettes, adjustable detail and a free PNG download. No upload or account required.'],
 };
 export default function SiteSEO({privateView=false}){
  const {pathname}=useRouter();const entry=pages[pathname];const noindex=!entry||privateView;

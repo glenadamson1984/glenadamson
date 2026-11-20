@@ -5,12 +5,13 @@ import { useState } from 'react';
 import { standings } from '../src/lib/football.mjs';
 
 export async function getServerSideProps({req,res}) {
-  const { validSession, cookieName } = await import('../src/lib/football-auth.mjs');
+  const {requireAdmin}=await import('../src/server/private-access.mjs');
+  const denied=requireAdmin({req,res},'/football');if(denied)return denied;
   res.setHeader('Cache-Control','private, no-store, max-age=0');
   res.setHeader('X-Robots-Tag','noindex, nofollow');
-  if (!validSession(req.cookies[cookieName])) return {props:{data:null}};
+
   const data = (await import('../src/data/football.json')).default;
-  return {props:{data}};
+  return {props:{data,isMaster:true}};
 }
 
 function TeamText({children}) {
@@ -49,10 +50,10 @@ export default function Football({data}) {
   const [block,setBlock]=useState(2),[pin,setPin]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false);
   async function login(e) {
     e.preventDefault();setBusy(true);setError('');
-    try { const r=await fetch('/api/football-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pin})});if(r.ok)window.location.assign('/football');else {setError((await r.json()).error);setBusy(false);} }
+    try { const r=await fetch('/api/master-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pin})});if(r.ok)window.location.assign('/football');else {setError((await r.json()).error);setBusy(false);} }
     catch {setError('Could not connect. Please try again.');setBusy(false);}
   }
-  async function logout(){setBusy(true);try{const r=await fetch('/api/football-session',{method:'DELETE'});if(!r.ok)throw Error();window.location.assign('/football');}catch{setError('Could not log out. Please try again.');setBusy(false);}}
+  async function logout(){setBusy(true);try{const r=await fetch('/api/master-session',{method:'DELETE'});if(!r.ok)throw Error();window.location.assign('/football');}catch{setError('Could not log out. Please try again.');setBusy(false);}}
   const group=team==='hurricanes'?'Hurricanes':'Tornadoes';
   const league=team==='hurricanes'?'Yellow':'Green';
   const teamColor=team==='hurricanes'?'#f5d66d':'#7bcda4';

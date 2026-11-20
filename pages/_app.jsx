@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "../styles/personal.css";
 import "../styles/tennis.css";
+import "../styles/products.css";
 import Head from 'next/head';
 import SiteSEO from '../src/components/SiteSEO';
 export default function App({ Component, pageProps }) {

@@ -2,8 +2,12 @@ import { cookieName, maxAge, correctPin, createSession } from '../../src/lib/mas
 
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'private, no-store');
+  if (req.method === 'GET') {
+    const { validSession } = await import('../../src/lib/master-auth.mjs');
+    return res.status(200).json({ authenticated: validSession(req.cookies[cookieName]) });
+  }
   if (req.method !== 'POST' && req.method !== 'DELETE') {
-    res.setHeader('Allow', 'POST, DELETE');
+    res.setHeader('Allow', 'GET, POST, DELETE');
     return res.status(405).json({ error: 'Method not allowed' });
   }
   const origin = req.headers.origin;
