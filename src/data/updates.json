@@ -139,5 +139,18 @@
       }
     ],
     "weights": []
+  },
+  {
+    "id": "daily-records-2026-11-20",
+    "runs": [
+      {
+        "id": "manual-2026-11-20-run",
+        "date": "2026-11-20",
+        "distanceKm": 10,
+        "movingSeconds": 3620,
+        "estimated": true
+      }
+    ],
+    "weights": []
   }
 ]
