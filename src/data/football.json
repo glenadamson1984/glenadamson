@@ -5,8 +5,8 @@
         "week": 1,
         "home": "St. Mary's Colts",
         "away": "Annagh Youth Tigers",
-        "hg": 4.0,
-        "ag": 4.0
+        "hg": 4,
+        "ag": 4
       },
       {
         "week": 1,
@@ -19,15 +19,15 @@
         "week": 2,
         "home": "Ridgeway Mill Youth Blues",
         "away": "Armagh City Colts",
-        "hg": 3.0,
-        "ag": 4.0
+        "hg": 3,
+        "ag": 4
       },
       {
         "week": 2,
         "home": "Annagh Youth Tigers",
         "away": "Markethill Swifts Colts",
-        "hg": 3.0,
-        "ag": 1.0
+        "hg": 3,
+        "ag": 1
       },
       {
         "week": 2,
@@ -47,78 +47,78 @@
         "week": 3,
         "home": "Ridgeway Mill Youth Blues",
         "away": "Tandragee Rovers",
-        "hg": 2.0,
-        "ag": 1.0
+        "hg": 2,
+        "ag": 1
       },
       {
         "week": 3,
         "home": "Markethill Swifts Colts",
         "away": "Seagoe",
-        "hg": 1.0,
-        "ag": 5.0
+        "hg": 1,
+        "ag": 5
       },
       {
         "week": 4,
         "home": "Tandragee Rovers",
         "away": "Armagh City Colts",
-        "hg": 1.0,
-        "ag": 1.0
+        "hg": 1,
+        "ag": 1
       },
       {
         "week": 4,
         "home": "Seagoe",
         "away": "Annagh Youth Tigers",
-        "hg": 5.0,
-        "ag": 1.0
+        "hg": 5,
+        "ag": 1
       },
       {
         "week": 4,
         "home": "St. Mary's Colts",
         "away": "Ridgeway Mill Youth Blues",
-        "hg": 4.0,
-        "ag": 0.0
+        "hg": 4,
+        "ag": 0
       },
       {
         "week": 5,
         "home": "Armagh City Colts",
         "away": "Seagoe",
-        "hg": 2.0,
-        "ag": 2.0
+        "hg": 2,
+        "ag": 2
       },
       {
         "week": 5,
         "home": "Tandragee Rovers",
         "away": "St. Mary's Colts",
-        "hg": 3.0,
-        "ag": 6.0
+        "hg": 3,
+        "ag": 6
       },
       {
         "week": 5,
         "home": "Ridgeway Mill Youth Blues",
         "away": "Markethill Swifts Colts",
-        "hg": 3.0,
-        "ag": 2.0
+        "hg": 3,
+        "ag": 2
       },
       {
         "week": 6,
         "home": "St. Mary's Colts",
         "away": "Armagh City Colts",
-        "hg": 1.0,
-        "ag": 0.0
+        "hg": 1,
+        "ag": 0
       },
       {
         "week": 6,
         "home": "Markethill Swifts Colts",
         "away": "Tandragee Rovers",
-        "hg": 4.0,
-        "ag": 3.0
+        "hg": 4,
+        "ag": 3
       },
       {
         "week": 6,
         "home": "Ridgeway Mill Youth Blues",
         "away": "Annagh Youth Tigers",
-        "hg": 7.0,
-        "ag": 3.0
+        "hg": 7,
+        "ag": 3
       },
       {
         "week": 7,
@@ -138,15 +138,15 @@
         "week": 7,
         "home": "Seagoe",
         "away": "Ridgeway Mill Youth Blues",
-        "hg": 2.0,
-        "ag": 1.0
+        "hg": 2,
+        "ag": 1
       },
       {
         "week": 7,
         "home": "Tandragee Rovers",
         "away": "Annagh Youth Tigers",
-        "hg": 1.0,
-        "ag": 5.0
+        "hg": 1,
+        "ag": 5
       }
     ],
     "2": [
@@ -154,85 +154,85 @@
         "week": 9,
         "home": "Annagh Youth Tigers",
         "away": "Rathfriland Youth",
-        "hg": 2.0,
-        "ag": 3.0
+        "hg": 2,
+        "ag": 3
       },
       {
         "week": 9,
         "home": "St. Mary's Colts",
         "away": "Seagoe",
-        "hg": 2.0,
-        "ag": 1.0
+        "hg": 2,
+        "ag": 1
       },
       {
         "week": 9,
         "home": "Dromore Amateurs Swifts",
         "away": "Tandragee Rovers",
-        "hg": 2.0,
-        "ag": 3.0
+        "hg": 2,
+        "ag": 3
       },
       {
         "week": 9,
         "home": "Armagh City Colts",
         "away": "Ridgeway Mill Youth Blues",
-        "hg": 5.0,
-        "ag": 3.0
+        "hg": 5,
+        "ag": 3
       },
       {
         "week": 10,
         "home": "Hanover Youth Colts",
         "away": "Bourneview Mill Minis",
-        "hg": 5.0,
-        "ag": 2.0
+        "hg": 5,
+        "ag": 2
       },
       {
         "week": 10,
         "home": "Rathfriland Youth",
         "away": "Armagh City Colts",
-        "hg": 2.0,
-        "ag": 3.0
+        "hg": 2,
+        "ag": 3
       },
       {
         "week": 10,
         "home": "Tandragee Rovers",
         "away": "Dromore Amateurs Swifts",
-        "hg": 4.0,
-        "ag": 7.0
+        "hg": 4,
+        "ag": 7
       },
       {
         "week": 10,
         "home": "Annagh Youth Tigers",
         "away": "St. Mary's Colts",
-        "hg": 1.0,
-        "ag": 3.0
+        "hg": 1,
+        "ag": 3
       },
       {
         "week": 11,
         "home": "Hanover Youth Colts",
         "away": "Armagh City Colts",
-        "hg": 2.0,
-        "ag": 1.0
+        "hg": 2,
+        "ag": 1
       },
       {
         "week": 11,
         "home": "Ridgeway Mill Youth Blues",
         "away": "Dromore Amateurs Swifts",
-        "hg": 1.0,
-        "ag": 4.0
+        "hg": 1,
+        "ag": 4
       },
       {
         "week": 11,
         "home": "Seagoe",
         "away": "Annagh Youth Tigers",
-        "hg": 0.0,
-        "ag": 4.0
+        "hg": 0,
+        "ag": 4
       },
       {
         "week": 11,
         "home": "Bourneview Mill Minis",
         "away": "Tandragee Rovers",
-        "hg": 3.0,
-        "ag": 2.0
+        "hg": 3,
+        "ag": 2
       }
     ]
   },
@@ -255,8 +255,8 @@
       "w": 0,
       "d": 0,
       "l": 5,
-      "gf": 6.0,
-      "ga": 28.0,
+      "gf": 6,
+      "ga": 28,
       "pts": 0
     },
     {
@@ -267,8 +267,8 @@
       "w": 2,
       "d": 0,
       "l": 3,
-      "gf": 13.0,
-      "ga": 18.0,
+      "gf": 13,
+      "ga": 18,
       "pts": 6
     },
     {
@@ -279,8 +279,8 @@
       "w": 3,
       "d": 1,
       "l": 0,
-      "gf": 15.0,
-      "ga": 7.0,
+      "gf": 15,
+      "ga": 7,
       "pts": 10
     },
     {
@@ -291,13 +291,13 @@
       "w": 5,
       "d": 0,
       "l": 0,
-      "gf": 28.0,
-      "ga": 10.0,
+      "gf": 28,
+      "ga": 10,
       "pts": 15
     }
   ],
   "source": "https://docs.google.com/spreadsheets/d/1MGjpydnGUSzjm-43za-KF37gaiNMngYIMvjBk_LyQ4o/edit",
-  "updated": "17 November 2026",
+  "updated": "20 November 2026",
   "hurricanes": {
     "blocks": {
       "1": [
@@ -305,162 +305,162 @@
           "week": 1,
           "home": "Dromore Amateurs Colts",
           "away": "Ambassadors Bears",
-          "hg": 2.0,
-          "ag": 2.0
+          "hg": 2,
+          "ag": 2
         },
         {
           "week": 1,
           "home": "Tandragee Rovers Youth",
           "away": "Banbridge Rangers",
-          "hg": 5.0,
-          "ag": 6.0
+          "hg": 5,
+          "ag": 6
         },
         {
           "week": 2,
           "home": "Hanover Youth Colts",
           "away": "Ambassadors Bears",
-          "hg": 4.0,
-          "ag": 4.0
+          "hg": 4,
+          "ag": 4
         },
         {
           "week": 2,
           "home": "Banbridge Rangers",
           "away": "Dromore Amateurs Colts",
-          "hg": 2.0,
-          "ag": 2.0
+          "hg": 2,
+          "ag": 2
         },
         {
           "week": 2,
           "home": "Lurgan Celtic White",
           "away": "Tandragee Rovers Youth",
-          "hg": 6.0,
-          "ag": 0.0
+          "hg": 6,
+          "ag": 0
         },
         {
           "week": 3,
           "home": "Banbridge Rangers",
           "away": "Lurgan Celtic White",
-          "hg": 6.0,
-          "ag": 6.0
+          "hg": 6,
+          "ag": 6
         },
         {
           "week": 3,
           "home": "Ambassadors Bears",
           "away": "Dromore Amateurs Colts",
-          "hg": 1.0,
-          "ag": 4.0
+          "hg": 1,
+          "ag": 4
         },
         {
           "week": 3,
           "home": "Tandragee Rovers Youth",
           "away": "Rathfriland Youth",
-          "hg": 4.0,
-          "ag": 6.0
+          "hg": 4,
+          "ag": 6
         },
         {
           "week": 4,
           "home": "Dromore Amateurs Colts",
           "away": "Rathfriland Colts",
-          "hg": 2.0,
-          "ag": 1.0
+          "hg": 2,
+          "ag": 1
         },
         {
           "week": 4,
           "home": "Lurgan Celtic White",
           "away": "Rathfriland Youth",
-          "hg": 3.0,
-          "ag": 6.0
+          "hg": 3,
+          "ag": 6
         },
         {
           "week": 4,
           "home": "Banbridge Rangers",
           "away": "Ambassadors Bears",
-          "hg": 2.0,
-          "ag": 1.0
+          "hg": 2,
+          "ag": 1
         },
         {
           "week": 5,
           "home": "Lurgan Celtic White",
           "away": "Dromore Amateurs Colts",
-          "hg": 4.0,
-          "ag": 3.0
+          "hg": 4,
+          "ag": 3
         },
         {
           "week": 5,
           "home": "Rathfriland Colts",
           "away": "Hanover Youth Colts",
-          "hg": 0.0,
-          "ag": 3.0
+          "hg": 0,
+          "ag": 3
         },
         {
           "week": 5,
           "home": "Rathfriland Youth",
           "away": "Banbridge Rangers",
-          "hg": 8.0,
-          "ag": 0.0
+          "hg": 8,
+          "ag": 0
         },
         {
           "week": 5,
           "home": "Tandragee Rovers Youth",
           "away": "Ambassadors Bears",
-          "hg": 0.0,
-          "ag": 3.0
+          "hg": 0,
+          "ag": 3
         },
         {
           "week": 6,
           "home": "Rathfriland Youth",
           "away": "Dromore Amateurs Colts",
-          "hg": 3.0,
-          "ag": 1.0
+          "hg": 3,
+          "ag": 1
         },
         {
           "week": 6,
           "home": "Seagoe fc",
           "away": "Rathfriland Colts",
-          "hg": 3.0,
-          "ag": 2.0
+          "hg": 3,
+          "ag": 2
         },
         {
           "week": 6,
           "home": "Ambassadors Bears",
           "away": "Lurgan Celtic White",
-          "hg": 0.0,
-          "ag": 6.0
+          "hg": 0,
+          "ag": 6
         },
         {
           "week": 6,
           "home": "Banbridge Rangers",
           "away": "Hanover Youth Colts",
-          "hg": 2.0,
-          "ag": 5.0
+          "hg": 2,
+          "ag": 5
         },
         {
           "week": 7,
           "home": "Dromore Amateurs Colts",
           "away": "Tandragee Rovers Youth",
-          "hg": 5.0,
-          "ag": 1.0
+          "hg": 5,
+          "ag": 1
         },
         {
           "week": 7,
           "home": "Rathfriland Youth",
           "away": "Ambassadors Bears",
-          "hg": 5.0,
-          "ag": 2.0
+          "hg": 5,
+          "ag": 2
         },
         {
           "week": 7,
           "home": "Rathfriland Colts",
           "away": "Banbridge Rangers",
-          "hg": 6.0,
-          "ag": 3.0
+          "hg": 6,
+          "ag": 3
         },
         {
           "week": 7,
           "home": "Lurgan Celtic White",
           "away": "Hanover Youth Colts",
-          "hg": 1.0,
-          "ag": 3.0
+          "hg": 1,
+          "ag": 3
         }
       ],
       "2": [
@@ -468,64 +468,64 @@
           "week": 9,
           "home": "Dromore Amateurs Colts",
           "away": "Banbridge Rangers",
-          "hg": 3.0,
-          "ag": 0.0
+          "hg": 3,
+          "ag": 0
         },
         {
           "week": 9,
           "home": "Tandragee Rovers Youth",
           "away": "Lurgan Celtic White",
-          "hg": 1.0,
-          "ag": 4.0
+          "hg": 1,
+          "ag": 4
         },
         {
           "week": 10,
           "home": "Craigavon City Colts",
           "away": "Dromore Amateurs Colts",
-          "hg": 1.0,
-          "ag": 9.0
+          "hg": 1,
+          "ag": 9
         },
         {
           "week": 10,
           "home": "Lurgan Celtic White",
           "away": "Banbridge Rangers",
-          "hg": 1.0,
-          "ag": 1.0
+          "hg": 1,
+          "ag": 1
         },
         {
           "week": 10,
           "home": "Rathfriland Colts",
           "away": "Ambassadors Bears",
-          "hg": 4.0,
-          "ag": 4.0
+          "hg": 4,
+          "ag": 4
         },
         {
           "week": 10,
           "home": "Markethill Swifts Colts",
           "away": "Tandragee Rovers Youth",
-          "hg": 3.0,
-          "ag": 3.0
+          "hg": 3,
+          "ag": 3
         },
         {
           "week": 11,
           "home": "Dromore Amateurs Colts",
           "away": "Lurgan Celtic White",
-          "hg": 3.0,
-          "ag": 0.0
+          "hg": 3,
+          "ag": 0
         },
         {
           "week": 11,
           "home": "Craigavon City Colts",
           "away": "Markethill Swifts Colts",
-          "hg": 3.0,
-          "ag": 3.0
+          "hg": 3,
+          "ag": 3
         },
         {
           "week": 11,
           "home": "Ambassadors Bears",
           "away": "Tandragee Rovers Youth",
-          "hg": 4.0,
-          "ag": 3.0
+          "hg": 4,
+          "ag": 3
         }
       ]
     },
@@ -559,8 +559,8 @@
           "w": 1,
           "d": 0,
           "l": 3,
-          "gf": 8.0,
-          "ga": 14.0,
+          "gf": 8,
+          "ga": 14,
           "pts": 3
         }
       },
@@ -575,8 +575,8 @@
           "w": 3,
           "d": 1,
           "l": 0,
-          "gf": 15.0,
-          "ga": 7.0,
+          "gf": 15,
+          "ga": 7,
           "pts": 10
         }
       },
@@ -591,8 +591,8 @@
           "w": 5,
           "d": 0,
           "l": 0,
-          "gf": 28.0,
-          "ga": 10.0,
+          "gf": 28,
+          "ga": 10,
           "pts": 15
         }
       },
@@ -607,12 +607,39 @@
           "w": 1,
           "d": 0,
           "l": 0,
-          "gf": 3.0,
-          "ga": 2.0,
+          "gf": 3,
+          "ga": 2,
           "pts": 3
         }
       }
-    ]
+    ],
+    "teamsByBlock": {
+      "1": [
+        "Ambassadors Bears",
+        "Banbridge Rangers",
+        "Dromore Amateurs Colts",
+        "Hanover Youth Colts",
+        "Lurgan Celtic White",
+        "Rathfriland Colts",
+        "Rathfriland Youth",
+        "Seagoe fc",
+        "Tandragee Rovers Youth"
+      ],
+      "2": [
+        "Ambassadors Bears",
+        "Banbridge Rangers",
+        "Craigavon City Colts",
+        "Dromore Amateurs Colts",
+        "Lurgan Celtic White",
+        "Markethill Swifts Colts",
+        "Rathfriland Colts",
+        "Tandragee Rovers Youth"
+      ]
+    },
+    "cancelled": {
+      "1": [],
+      "2": []
+    }
   },
   "moves": [
     {
@@ -626,8 +653,8 @@
         "w": 0,
         "d": 0,
         "l": 5,
-        "gf": 6.0,
-        "ga": 28.0,
+        "gf": 6,
+        "ga": 28,
         "pts": 0
       }
     },
@@ -642,8 +669,8 @@
         "w": 2,
         "d": 0,
         "l": 3,
-        "gf": 13.0,
-        "ga": 18.0,
+        "gf": 13,
+        "ga": 18,
         "pts": 6
       }
     },
@@ -658,8 +685,8 @@
         "w": 3,
         "d": 1,
         "l": 0,
-        "gf": 15.0,
-        "ga": 7.0,
+        "gf": 15,
+        "ga": 7,
         "pts": 10
       }
     },
@@ -674,8 +701,8 @@
         "w": 5,
         "d": 0,
         "l": 0,
-        "gf": 28.0,
-        "ga": 10.0,
+        "gf": 28,
+        "ga": 10,
         "pts": 15
       }
     },
@@ -706,10 +733,654 @@
         "w": 1,
         "d": 0,
         "l": 3,
-        "gf": 8.0,
-        "ga": 14.0,
+        "gf": 8,
+        "ga": 14,
         "pts": 3
       }
     }
+  ],
+  "leagues": {
+    "red": {
+      "teamsByBlock": {
+        "1": [
+          "Armagh City Eagles",
+          "Dromore Amateurs",
+          "Glenavon Aces 2017",
+          "Hanover Youth",
+          "Loughgall Youth 2017",
+          "Lurgan Celtic Green",
+          "Ridgeway Mill Youth",
+          "St. Mary's"
+        ],
+        "2": [
+          "Armagh City 2017",
+          "Armagh City Eagles",
+          "Caledon Rovers 2017",
+          "Dromore Amateurs",
+          "Glenavon Aces 2017",
+          "Hanover Youth",
+          "Loughgall Youth 2017",
+          "St. Mary's"
+        ]
+      },
+      "cancelled": {
+        "1": [],
+        "2": []
+      },
+      "blocks": {
+        "1": [
+          {
+            "week": 1,
+            "home": "Dromore Amateurs",
+            "away": "Lurgan Celtic Green",
+            "hg": 16,
+            "ag": 1,
+            "sourceRow": 178
+          },
+          {
+            "week": 1,
+            "home": "St. Mary's",
+            "away": "Glenavon Aces 2017",
+            "hg": 6,
+            "ag": 1,
+            "sourceRow": 179
+          },
+          {
+            "week": 1,
+            "home": "Loughgall Youth 2017",
+            "away": "Ridgeway Mill Youth",
+            "hg": 4,
+            "ag": 0,
+            "sourceRow": 180
+          },
+          {
+            "week": 2,
+            "home": "Glenavon Aces 2017",
+            "away": "Dromore Amateurs",
+            "hg": 2,
+            "ag": 3,
+            "sourceRow": 227
+          },
+          {
+            "week": 2,
+            "home": "Armagh City Eagles",
+            "away": "Lurgan Celtic Green",
+            "hg": 7,
+            "ag": 3,
+            "sourceRow": 228
+          },
+          {
+            "week": 2,
+            "home": "Ridgeway Mill Youth",
+            "away": "St. Mary's",
+            "hg": 2,
+            "ag": 4,
+            "sourceRow": 229
+          },
+          {
+            "week": 2,
+            "home": "Loughgall Youth 2017",
+            "away": "Hanover Youth",
+            "hg": 1,
+            "ag": 0,
+            "sourceRow": 230
+          },
+          {
+            "week": 3,
+            "home": "Dromore Amateurs",
+            "away": "Armagh City Eagles",
+            "hg": 8,
+            "ag": 1,
+            "sourceRow": 316
+          },
+          {
+            "week": 3,
+            "home": "Glenavon Aces 2017",
+            "away": "Ridgeway Mill Youth",
+            "hg": 10,
+            "ag": 1,
+            "sourceRow": 317
+          },
+          {
+            "week": 3,
+            "home": "Lurgan Celtic Green",
+            "away": "Loughgall Youth 2017",
+            "hg": 1,
+            "ag": 3,
+            "sourceRow": 318
+          },
+          {
+            "week": 4,
+            "home": "St. Mary's",
+            "away": "Dromore Amateurs",
+            "hg": 2,
+            "ag": 2,
+            "sourceRow": 257
+          },
+          {
+            "week": 4,
+            "home": "Loughgall Youth 2017",
+            "away": "Armagh City Eagles",
+            "hg": 2,
+            "ag": 1,
+            "sourceRow": 258
+          },
+          {
+            "week": 5,
+            "home": "Dromore Amateurs",
+            "away": "Loughgall Youth 2017",
+            "hg": 3,
+            "ag": 1,
+            "sourceRow": 264
+          },
+          {
+            "week": 5,
+            "home": "Ridgeway Mill Youth",
+            "away": "Hanover Youth",
+            "hg": 0,
+            "ag": 1,
+            "sourceRow": 265
+          },
+          {
+            "week": 5,
+            "home": "Armagh City Eagles",
+            "away": "St. Mary's",
+            "hg": 2,
+            "ag": 8,
+            "sourceRow": 266
+          },
+          {
+            "week": 5,
+            "home": "Glenavon Aces 2017",
+            "away": "Lurgan Celtic Green",
+            "hg": 8,
+            "ag": 5,
+            "sourceRow": 267
+          },
+          {
+            "week": 6,
+            "home": "Hanover Youth",
+            "away": "Dromore Amateurs",
+            "hg": 0,
+            "ag": 4,
+            "sourceRow": 314
+          },
+          {
+            "week": 6,
+            "home": "St. Mary's",
+            "away": "Loughgall Youth 2017",
+            "hg": 3,
+            "ag": 0,
+            "sourceRow": 315
+          },
+          {
+            "week": 6,
+            "home": "Lurgan Celtic Green",
+            "away": "Ridgeway Mill Youth",
+            "hg": 1,
+            "ag": 9,
+            "sourceRow": 316
+          },
+          {
+            "week": 6,
+            "home": "Glenavon Aces 2017",
+            "away": "Armagh City Eagles",
+            "hg": 8,
+            "ag": 3,
+            "sourceRow": 317
+          },
+          {
+            "week": 7,
+            "home": "Dromore Amateurs",
+            "away": "St. Mary's",
+            "hg": 1,
+            "ag": 2,
+            "sourceRow": 271
+          },
+          {
+            "week": 7,
+            "home": "Hanover Youth",
+            "away": "Lurgan Celtic Green",
+            "hg": 10,
+            "ag": 1,
+            "sourceRow": 272
+          },
+          {
+            "week": 7,
+            "home": "Loughgall Youth 2017",
+            "away": "Glenavon Aces 2017",
+            "hg": 4,
+            "ag": 2,
+            "sourceRow": 273
+          },
+          {
+            "week": 7,
+            "home": "Ridgeway Mill Youth",
+            "away": "Armagh City Eagles",
+            "hg": null,
+            "ag": null,
+            "sourceRow": 274
+          }
+        ],
+        "2": [
+          {
+            "week": 9,
+            "home": "Dromore Amateurs",
+            "away": "Glenavon Aces 2017",
+            "hg": 5,
+            "ag": 2,
+            "sourceRow": 238
+          },
+          {
+            "week": 9,
+            "home": "Armagh City 2017",
+            "away": "Armagh City Eagles",
+            "hg": 7,
+            "ag": 1,
+            "sourceRow": 239
+          },
+          {
+            "week": 10,
+            "home": "Armagh City Eagles",
+            "away": "Dromore Amateurs",
+            "hg": 0,
+            "ag": 1,
+            "sourceRow": 281
+          },
+          {
+            "week": 10,
+            "home": "Caledon Rovers 2017",
+            "away": "Glenavon Aces 2017",
+            "hg": 9,
+            "ag": 1,
+            "sourceRow": 282
+          },
+          {
+            "week": 10,
+            "home": "Loughgall Youth 2017",
+            "away": "Armagh City 2017",
+            "hg": 1,
+            "ag": 4,
+            "sourceRow": 283
+          },
+          {
+            "week": 10,
+            "home": "Hanover Youth",
+            "away": "St. Mary's",
+            "hg": 2,
+            "ag": 3,
+            "sourceRow": 284
+          },
+          {
+            "week": 11,
+            "home": "Armagh City Eagles",
+            "away": "Loughgall Youth 2017",
+            "hg": 1,
+            "ag": 2,
+            "sourceRow": 281
+          },
+          {
+            "week": 11,
+            "home": "Glenavon Aces 2017",
+            "away": "Hanover Youth",
+            "hg": 2,
+            "ag": 4,
+            "sourceRow": 282
+          },
+          {
+            "week": 11,
+            "home": "Armagh City 2017",
+            "away": "St. Mary's",
+            "hg": 4,
+            "ag": 3,
+            "sourceRow": 283
+          }
+        ]
+      },
+      "block1Teams": [
+        "Armagh City Eagles",
+        "Dromore Amateurs",
+        "Glenavon Aces 2017",
+        "Hanover Youth",
+        "Loughgall Youth 2017",
+        "Lurgan Celtic Green",
+        "Ridgeway Mill Youth",
+        "St. Mary's"
+      ]
+    },
+    "blue": {
+      "teamsByBlock": {
+        "1": [
+          "Annagh Youth Lions",
+          "Bourneview Mill Minis",
+          "Craigavon City",
+          "Dromore Amateurs Swifts",
+          "Lurgan Town Vapors",
+          "Markethill Swifts",
+          "Rathfriland Swifts",
+          "TTBS Juniors"
+        ],
+        "2": [
+          "Annagh Youth Lions",
+          "Craigavon City",
+          "Lurgan Celtic Green",
+          "Lurgan Town Vapors",
+          "Markethill Swifts",
+          "Ridgeway Mill Youth",
+          "TTBS Juniors"
+        ]
+      },
+      "cancelled": {
+        "1": [
+          {
+            "week": 1,
+            "home": "Craigavon City",
+            "away": "Dromore Amateurs Swifts",
+            "sourceRow": 184
+          },
+          {
+            "week": 1,
+            "home": "Markethill Swifts",
+            "away": "TTBS Juniors",
+            "sourceRow": 185
+          },
+          {
+            "week": 1,
+            "home": "Bourneview Mill Minis",
+            "away": "Annagh Youth Lions",
+            "sourceRow": 186
+          },
+          {
+            "week": 1,
+            "home": "Rathfriland Swifts",
+            "away": "Lurgan Town Vapors",
+            "sourceRow": 187
+          }
+        ],
+        "2": []
+      },
+      "blocks": {
+        "1": [
+          {
+            "week": 2,
+            "home": "TTBS Juniors",
+            "away": "Craigavon City",
+            "hg": 0,
+            "ag": 8,
+            "sourceRow": 234
+          },
+          {
+            "week": 2,
+            "home": "Annagh Youth Lions",
+            "away": "Dromore Amateurs Swifts",
+            "hg": 5,
+            "ag": 1,
+            "sourceRow": 235
+          },
+          {
+            "week": 2,
+            "home": "Lurgan Town Vapors",
+            "away": "Markethill Swifts",
+            "hg": 3,
+            "ag": 2,
+            "sourceRow": 236
+          },
+          {
+            "week": 3,
+            "home": "Craigavon City",
+            "away": "Annagh Youth Lions",
+            "hg": 3,
+            "ag": 6,
+            "sourceRow": 323
+          },
+          {
+            "week": 3,
+            "home": "TTBS Juniors",
+            "away": "Lurgan Town Vapors",
+            "hg": 7,
+            "ag": 3,
+            "sourceRow": 324
+          },
+          {
+            "week": 3,
+            "home": "Markethill Swifts",
+            "away": "Bourneview Mill Minis",
+            "hg": 4,
+            "ag": 0,
+            "sourceRow": 325
+          },
+          {
+            "week": 4,
+            "home": "Lurgan Town Vapors",
+            "away": "Craigavon City",
+            "hg": 2,
+            "ag": 3,
+            "sourceRow": 262
+          },
+          {
+            "week": 4,
+            "home": "Bourneview Mill Minis",
+            "away": "Annagh Youth Lions",
+            "hg": 1,
+            "ag": 8,
+            "sourceRow": 263
+          },
+          {
+            "week": 4,
+            "home": "Markethill Swifts",
+            "away": "Dromore Amateurs Swifts",
+            "hg": 3,
+            "ag": 1,
+            "sourceRow": 264
+          },
+          {
+            "week": 5,
+            "home": "Lurgan Town Vapors",
+            "away": "Bourneview Mill Minis",
+            "hg": 5,
+            "ag": 3,
+            "sourceRow": 271
+          },
+          {
+            "week": 5,
+            "home": "Annagh Youth Lions",
+            "away": "Markethill Swifts",
+            "hg": 2,
+            "ag": 4,
+            "sourceRow": 272
+          },
+          {
+            "week": 5,
+            "home": "TTBS Juniors",
+            "away": "Dromore Amateurs Swifts",
+            "hg": 2,
+            "ag": 5,
+            "sourceRow": 273
+          },
+          {
+            "week": 6,
+            "home": "Bourneview Mill Minis",
+            "away": "Craigavon City",
+            "hg": 0,
+            "ag": 6,
+            "sourceRow": 321
+          },
+          {
+            "week": 6,
+            "home": "Dromore Amateurs Swifts",
+            "away": "Lurgan Town Vapors",
+            "hg": 1,
+            "ag": 6,
+            "sourceRow": 322
+          },
+          {
+            "week": 6,
+            "home": "TTBS Juniors",
+            "away": "Annagh Youth Lions",
+            "hg": 2,
+            "ag": 5,
+            "sourceRow": 323
+          },
+          {
+            "week": 7,
+            "home": "Craigavon City",
+            "away": "Markethill Swifts",
+            "hg": 0,
+            "ag": 3,
+            "sourceRow": 278
+          },
+          {
+            "week": 7,
+            "home": "Bourneview Mill Minis",
+            "away": "Dromore Amateurs Swifts",
+            "hg": 2,
+            "ag": 5,
+            "sourceRow": 279
+          },
+          {
+            "week": 7,
+            "home": "Lurgan Town Vapors",
+            "away": "Annagh Youth Lions",
+            "hg": 3,
+            "ag": 5,
+            "sourceRow": 280
+          }
+        ],
+        "2": [
+          {
+            "week": 9,
+            "home": "Craigavon City",
+            "away": "TTBS Juniors",
+            "hg": 3,
+            "ag": 4,
+            "sourceRow": 243
+          },
+          {
+            "week": 9,
+            "home": "Ridgeway Mill Youth",
+            "away": "Annagh Youth Lions",
+            "hg": 3,
+            "ag": 0,
+            "sourceRow": 244
+          },
+          {
+            "week": 9,
+            "home": "Markethill Swifts",
+            "away": "Lurgan Town Vapors",
+            "hg": 2,
+            "ag": 1,
+            "sourceRow": 245
+          },
+          {
+            "week": 10,
+            "home": "Annagh Youth Lions",
+            "away": "Craigavon City",
+            "hg": 2,
+            "ag": 4,
+            "sourceRow": 288
+          },
+          {
+            "week": 10,
+            "home": "Lurgan Town Vapors",
+            "away": "TTBS Juniors",
+            "hg": 1,
+            "ag": 3,
+            "sourceRow": 289
+          },
+          {
+            "week": 10,
+            "home": "Lurgan Celtic Green",
+            "away": "Markethill Swifts",
+            "hg": 3,
+            "ag": 4,
+            "sourceRow": 290
+          },
+          {
+            "week": 11,
+            "home": "Craigavon City",
+            "away": "Lurgan Celtic Green",
+            "hg": 2,
+            "ag": 2,
+            "sourceRow": 287
+          },
+          {
+            "week": 11,
+            "home": "Lurgan Town Vapors",
+            "away": "Ridgeway Mill Youth",
+            "hg": 2,
+            "ag": 2,
+            "sourceRow": 288
+          },
+          {
+            "week": 11,
+            "home": "Annagh Youth Lions",
+            "away": "TTBS Juniors",
+            "hg": 6,
+            "ag": 2,
+            "sourceRow": 289
+          }
+        ]
+      },
+      "block1Teams": [
+        "Annagh Youth Lions",
+        "Bourneview Mill Minis",
+        "Craigavon City",
+        "Dromore Amateurs Swifts",
+        "Lurgan Town Vapors",
+        "Markethill Swifts",
+        "Rathfriland Swifts",
+        "TTBS Juniors"
+      ]
+    }
+  },
+  "teamsByBlock": {
+    "1": [
+      "Ambassadors City Stars",
+      "Annagh Youth Tigers",
+      "Armagh City Colts",
+      "Markethill Swifts Colts",
+      "Ridgeway Mill Youth Blues",
+      "Seagoe",
+      "St. Mary's Colts",
+      "Tandragee Rovers"
+    ],
+    "2": [
+      "Annagh Youth Tigers",
+      "Armagh City Colts",
+      "Bourneview Mill Minis",
+      "Dromore Amateurs Swifts",
+      "Hanover Youth Colts",
+      "Rathfriland Youth",
+      "Ridgeway Mill Youth Blues",
+      "Seagoe",
+      "St. Mary's Colts",
+      "Tandragee Rovers"
+    ]
+  },
+  "cancelled": {
+    "1": [],
+    "2": []
+  },
+  "coverageWeeks": {
+    "1": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "2": [
+      9,
+      10,
+      11
+    ]
+  },
+  "sourceNotes": [
+    "Week 8 was cancelled; no Week 8 tab is present.",
+    "Blue Week 1 has four cancelled fixtures, excluded from played matches. Rathfriland Swifts appears only in a cancelled fixture and is unranked.",
+    "Some team names in Red carry a 2017 suffix. They are retained as listed under 2016 Under 11 Dynamos.",
+    "Group changes use fixture listings, including cancellations. Bye notes are not used to infer membership because some repeat teams in another group."
   ]
 }

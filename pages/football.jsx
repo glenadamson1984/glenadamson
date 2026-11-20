@@ -1,82 +1,61 @@
 import SiteFooter from '../src/components/SiteFooter';
 import SiteHeader from '../src/components/SiteHeader';
 import Head from 'next/head';
-import { useState } from 'react';
-import { standings } from '../src/lib/football.mjs';
+import {useState} from 'react';
+import {standings,LEAGUES,leagueData,leagueTeams,scoreCoverage,blockMoves} from '../src/lib/football.mjs';
 
 export async function getServerSideProps({req,res}) {
   const {requireAdmin}=await import('../src/server/private-access.mjs');
   const denied=requireAdmin({req,res},'/football');if(denied)return denied;
-  res.setHeader('Cache-Control','private, no-store, max-age=0');
-  res.setHeader('X-Robots-Tag','noindex, nofollow');
-
-  const data = (await import('../src/data/football.json')).default;
+  const data=(await import('../src/data/football.json')).default;
   return {props:{data,isMaster:true}};
 }
-
 function TeamText({children}) {
-  return children.split(/(Tandragee(?: Rovers)?(?:’s|'s)?)/gi).map((part,i)=>
-    /^Tandragee/i.test(part)?<strong key={i} style={{color:'#ffad64',fontWeight:700}}>{part}</strong>:part
-  );
+  return String(children).split(/(Tandragee(?: Rovers)?(?:’s|'s)?)/gi).map((part,i)=>/^Tandragee/i.test(part)?<strong key={i} style={{color:'#ffad64',fontWeight:700}}>{part}</strong>:part);
 }
-
-function LeagueTable({rows,teamName,league,group}) {
-  return <div className="football-scroll"><table className="football-table">
-    <caption>SSG {league} League — 2016 Under 11 {group}</caption>
-    <thead><tr>{['Pos','Team','P','W','D','L','GF','GA','GD','Pts','Pts/game'].map(h=><th key={h} scope="col">{h}</th>)}</tr></thead>
-    <tbody>{rows.map((q,i)=>{
-      const ours=q.team===teamName;
-      const cellStyle={color:ours?'#ffad64':'#f5f5f5',...(ours?{fontWeight:700}:{})};
-      return <tr key={q.team} className={ours?'our-team':''}>
-        <td style={cellStyle}>{q.p?i+1:'—'}</td>
-        <th style={cellStyle} scope="row">{q.team}</th>
-        {['p','w','d','l','gf','ga','gd','pts'].map(k=><td key={k} style={cellStyle}>{k==='gd'&&q[k]>0?'+':''}{q[k]}</td>)}
-        <td style={cellStyle}>{q.p?(q.pts/q.p).toFixed(2):'—'}</td>
-      </tr>;
-    })}</tbody>
-  </table></div>;
+function LeagueTable({rows,league}) {
+  return <div className="football-scroll"><table className="football-table"><caption>SSG {league.name} League — 2016 Under 11 {league.group}</caption><thead><tr>{['Pos','Team','P','W','D','L','GF','GA','GD','Pts','Pts/game'].map(h=><th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{rows.map((q,i)=>{
+    const ours=q.team.startsWith('Tandragee Rovers');const style={color:ours?'#ffad64':'#f5f5f5',...(ours?{fontWeight:700}:{})};
+    return <tr key={q.team}><td style={style}>{q.p?i+1:'—'}</td><th style={style} scope="row">{q.team}</th>{['p','w','d','l','gf','ga','gd','pts'].map(k=><td key={k} style={style}>{k==='gd'&&q[k]>0?'+':''}{q[k]}</td>)}<td style={style}>{q.p?(q.pts/q.p).toFixed(2):'—'}</td></tr>;
+  })}</tbody></table></div>;
 }
 function GroupMoves({moves,league}) {
   const change=m=>{
     if(m.league==='Not listed')return m.direction==='Joined'?`Joined ${league}`:`No longer listed in ${league}`;
     const from=m.direction==='Joined'?m.league:league,to=m.direction==='Joined'?league:m.league;
-    const levels={Yellow:0,Green:1,Blue:2,Red:3};
-    return `${levels[to]>levels[from]?'Up':'Down'} from ${from} to ${to}`;
+    const levels={Yellow:0,Green:1,Blue:2,Red:3};return `${levels[to]>levels[from]?'Up':'Down'} from ${from} to ${to}`;
   };
-  return <section className="football-card"><h3>Who moved between blocks?</h3><p className="football-note">Changes in the listed {league} fixtures from Block 1 to Block 2. Records show scored Block 1 matches. A missing listing does not confirm a promotion or relegation.</p><div className="football-scroll"><table className="football-table arrivals"><thead><tr>{['Team','Change','P','W','D','L','Pts'].map(h=><th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{moves.map(m=><tr key={m.team}><th scope="row">{m.team}</th><td>{change(m)}<small>{m.league==='Not listed'?(m.direction==='Joined'?'Previous Under 11 group not found':'No Block 2 listing under this name'):(m.direction==='Joined'?`From ${m.league} — ${m.group}`:`To ${m.league} — ${m.group}`)}</small></td>{['p','w','d','l','pts'].map(k=><td key={k}>{m.stats?.p?m.stats[k]:'—'}</td>)}</tr>)}</tbody></table></div></section>;
+  return <section className="football-card"><h3>Who moved between blocks?</h3><p className="football-note">Fixture listings compared between Blocks 1 and 2. Records below are scored Block 1 matches. An absent listing does not confirm a move to another group.</p>{moves.length?<div className="football-scroll"><table className="football-table arrivals"><thead><tr>{['Team','Change','P','W','D','L','GF','GA','Pts'].map(h=><th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{moves.map(m=><tr key={m.team}><th scope="row"><TeamText>{m.team}</TeamText></th><td>{change(m)}<small>{m.league==='Not listed'?(m.direction==='Joined'?'No previous fixture found in the 2016 leagues':'No Block 2 fixture found in the 2016 leagues'):(m.direction==='Joined'?`From ${m.league} — ${m.group}`:`To ${m.league} — ${m.group}`)}</small></td>{['p','w','d','l','gf','ga','pts'].map(k=><td key={k}>{m.stats?.p?m.stats[k]:'—'}</td>)}</tr>)}</tbody></table></div>:<p>No changes found in the fixture listings.</p>}</section>;
+}
+function Coverage({data,block}){const c=scoreCoverage(data,block);return <p className="football-note">{c.scored} of {c.listed} non-cancelled fixtures have both scores entered. {c.missing} missing score{c.missing===1?'':'s'}; {c.cancelled} cancelled fixture{c.cancelled===1?'':'s'} excluded.</p>;}
+function TableNote(){return <p className="football-note">3 points per win, 1 per draw. Order: points, goal difference, goals scored, then team name. Points per game = points ÷ matches played. Missing and cancelled results do not count. Teams with no scored matches are unranked.</p>;}
+function Overview({data,block,onSelect}) {
+  const summary=LEAGUES.map(l=>{const d=leagueData(data,l.id);return {...l,data:d,coverage:scoreCoverage(d,block),rows:standings(d.blocks[block],leagueTeams(d,block))};});
+  return <><section className="football-card"><h2>All four leagues at a glance</h2><p>2016 Under 11 ability groups, using the same block and scoring rules. Compare form within each league; points from different ability groups are not a single overall ranking.</p><div className="football-overview-grid">{summary.map(l=><button type="button" className="football-league-summary" key={l.id} style={{'--league-color':l.color}} onClick={()=>onSelect(l.id)}><span>{l.name} · {l.group}</span><strong>{l.rows.filter(q=>q.p).length} ranked teams</strong><small>{l.coverage.scored}/{l.coverage.listed} fixtures scored · {l.coverage.missing} missing · {l.coverage.cancelled} cancelled</small><small>Leading on points: <b><TeamText>{l.rows.find(q=>q.p)?.team||'No scored results'}</TeamText></b></small></button>)}</div></section>{summary.map(l=><section className="football-card football-overview-table" key={l.id} style={{borderTop:`3px solid ${l.color}`}}><div className="football-section-heading"><h3 style={{color:l.color}}>{l.name} League · {l.group}</h3><button onClick={()=>onSelect(l.id)}>View fixtures and group changes</button></div><LeagueTable rows={l.rows} league={l}/><Coverage data={l.data} block={block}/></section>)}<section className="football-card"><TableNote/></section></>;
+}
+function Findings({league,rows,block,coverage}) {
+  const leader=rows.find(q=>q.p);const us=rows.find(q=>q.team===league.team);const unbeaten=rows.filter(q=>q.p&&q.l===0);
+  return <section className="football-card"><h3>Findings so far</h3>{us&&us.p>0&&<p><TeamText>{`${us.team} have ${us.w} win${us.w===1?'':'s'}, ${us.d} draw${us.d===1?'':'s'} and ${us.l} defeat${us.l===1?'':'s'}, with ${us.gf} goals scored and ${us.ga} conceded. They are ${rows.indexOf(us)+1} of ${rows.filter(q=>q.p).length} teams with scored matches, on ${(us.pts/us.p).toFixed(2)} points per game.`}</TeamText></p>}{leader?<p><TeamText>{`${leader.team} lead ${league.name} on ${leader.pts} points from ${leader.p} scored matches (${leader.w}W · ${leader.d}D · ${leader.l}L). ${unbeaten.length?`${unbeaten.map(q=>q.team).join(', ')} ${unbeaten.length===1?'is':'are'} unbeaten in their recorded matches.`:''}`}</TeamText></p>:<p>No scored results yet.</p>}{coverage.missing>0&&<p>{coverage.missing} fixture{coverage.missing===1?' has':'s have'} missing scores, so the table is incomplete.</p>}{league.id==='green'&&block===1&&<p><TeamText>The recalled Seagoe 4–2 Tandragee result is unconfirmed and remains excluded.</TeamText></p>}{block===2&&<p>We’ll add results through the end of Block 2, provisionally around week 16. Compare points per game, score margins and opponents faced when reviewing group moves.</p>}</section>;
 }
 export default function Football({data}) {
-  const [team,setTeam]=useState('tornadoes');
-  const [block,setBlock]=useState(2),[pin,setPin]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false);
-  async function login(e) {
-    e.preventDefault();setBusy(true);setError('');
-    try { const r=await fetch('/api/master-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pin})});if(r.ok)window.location.assign('/football');else {setError((await r.json()).error);setBusy(false);} }
-    catch {setError('Could not connect. Please try again.');setBusy(false);}
-  }
-  async function logout(){setBusy(true);try{const r=await fetch('/api/master-session',{method:'DELETE'});if(!r.ok)throw Error();window.location.assign('/football');}catch{setError('Could not log out. Please try again.');setBusy(false);}}
-  const group=team==='hurricanes'?'Hurricanes':'Tornadoes';
-  const league=team==='hurricanes'?'Yellow':'Green';
-  const teamColor=team==='hurricanes'?'#f5d66d':'#7bcda4';
-  const teamName=team==='hurricanes'?'Tandragee Rovers Youth':'Tandragee Rovers';
-  const selected=data&&(team==='hurricanes'?data.hurricanes:data);
-  const rows=selected&&block<3?standings(selected.blocks[block],block===1?selected.block1Teams:[]):[];
-  const us=rows.find(q=>q.team===teamName);
-  return <div className="football-theme" style={{'--team-accent':teamColor}}><Head><title>Football Progress | Tandragee Rovers 2016</title><meta name="robots" content="noindex,nofollow"/></Head>
-    <a className="skip-link" href="#football-main">Skip to content</a>
-    <SiteHeader active="football" actions={data&&<button onClick={logout} disabled={busy}>Log out</button>}/>
-    <main id="football-main"><section className="hero"><div>{data?<nav className="football-team-tabs" aria-label="Tandragee teams">{['tornadoes','hurricanes'].map(id=><button key={id} aria-pressed={team===id} onClick={()=>setTeam(id)}>TANDRAGEE ROVERS {id.toUpperCase()} 2016</button>)}</nav>:<span className="eyebrow">TANDRAGEE ROVERS 2016</span>}<h1><span style={{color:data?teamColor:undefined,fontWeight:600}}>26–27</span> season <span>Progress</span><span className="title-dot">.</span></h1><p>{data?`${league} League · Under 11 ${group} · SSG`:"Under 11 · SSG"}</p></div>{data&&<span className="football-season">2026 / 2027</span>}</section>
-    {!data?<section className="football-card football-login"><span className="eyebrow">FOOTBALL LOGIN</span><h2>Your season, in one place.</h2><p>Enter your PIN to view the team’s progress.</p><form onSubmit={login}><label htmlFor="football-pin">PIN</label><input id="football-pin" type="password" inputMode="numeric" pattern="[0-9]{4}" maxLength={4} autoComplete="current-password" required value={pin} onChange={e=>setPin(e.target.value)} aria-describedby={error?'login-error':undefined}/><button className="primary" disabled={busy}>{busy?'Checking…':'Unlock football progress →'}</button></form>{error&&<p id="login-error" role="alert">{error}</p>}</section>:<>
-    <nav className="dashboard-controls" aria-label="Season blocks"><div className="tabs football-tabs">{[1,2,3,4].map(n=><button key={n} aria-current={block===n?'page':undefined} onClick={()=>setBlock(n)} className={block===n?'selected':''}>Block {n}</button>)}</div><span className="personal-label">UPDATED {data.updated.toUpperCase()}</span></nav>
-    {block>2?<section className="football-card football-empty"><span className="eyebrow">BLOCK {block}</span><h2>No information yet</h2><p>Fixtures, results and findings will appear here when this block begins.</p></section>:<>
-    <div className="football-section-heading"><div><span className="eyebrow">BLOCK {block}</span><h2>{block===1?'The opening block':`A new mix in ${league}`}</h2></div><span className="football-period">{block===1?'Weeks 1–8 · Week 8 cancelled':'Weeks 9–11 recorded'}</span></div>
-    {block===2&&<GroupMoves moves={selected.moves} league={league}/>}
-    {team==='hurricanes'&&<section className="football-card"><h3>Source notes</h3><p className="football-note">Week 5’s “Ambassadors” entry is treated as Ambassadors Bears, matching the other Hurricanes listings. “Seagoe fc” appears once in Block 1 Yellow and is kept separate from Green’s Seagoe. Hanover remains in the week 9 Yellow no-match note, but their scored Block 2 fixtures are in Green.</p></section>}
-    <section className="football-metrics" aria-label="Tandragee summary">{[['Position',`${rows.indexOf(us)+1} / ${rows.filter(q=>q.p).length}`],['Played',us.p],['Record',`${us.w}W · ${us.d}D · ${us.l}L`],['Points per game',(us.pts/us.p).toFixed(2)]].map(([label,value])=><div className="football-card" key={label}><span className="eyebrow">{label}</span><strong>{value}</strong></div>)}</section>
-    <section className="football-card"><h3>Block {block} league table</h3><LeagueTable rows={rows} teamName={teamName} league={league} group={group}/><p className="football-note">3 points per win, 1 per draw. Order: points, goal difference, goals scored. Points per game = points ÷ matches played. Blank scores and no-match entries are excluded. Teams without scored results are unranked.</p></section>
-    <section className="football-card"><h3><TeamText>Tandragee’s fixtures</TeamText></h3><div className="football-fixtures">{selected.blocks[block].filter(m=>m.home===teamName||m.away===teamName).map(m=><div key={m.week}><span>Week {m.week}</span><p><TeamText>{m.home}</TeamText> <strong>{m.hg===null||m.ag===null?'—':`${m.hg}–${m.ag}`}</strong> <TeamText>{m.away}</TeamText></p>{(m.hg===null||m.ag===null)&&<small>Score not recorded</small>}</div>)}</div></section>
-    <section className="football-card"><h3>Findings so far</h3>{team==='hurricanes'?<><p><TeamText>{block===1?'Tandragee Rovers Youth lost all five Block 1 matches, scoring 10 and conceding 26. Rathfriland Youth won all five of theirs. Hanover were unbeaten with three wins and a draw. Both moved up to Green for Block 2.':'Tandragee Rovers Youth have one draw and two defeats in Block 2, scoring 7 and conceding 11. Their 3–3 draw with Markethill earned their first point of the recorded season. Dromore Amateurs Colts lead Yellow with three wins from three matches.'}</TeamText></p><p>All {block===1?'23':'9'} listed Hurricanes fixtures in this block have both scores entered. Match counts differ, so points per game helps compare form.</p></>:<><p><TeamText>{block===1?'Tandragee finished lowest among the seven teams with scored results: one draw and four defeats. Week 8 was cancelled due to the storm. Five listed fixtures across the league have missing scores, including Seagoe v Tandragee in week 1. The recalled 4–2 defeat is unconfirmed and is excluded from this table.':'Tandragee have one win and two defeats, with 9 goals scored and 12 conceded. Hanover and St. Mary’s have won both their matches. Seagoe have lost to St. Mary’s and Annagh, both returning Green teams.'}</TeamText></p></>}{block===2&&<p>We’ll add results through the end of Block 2, provisionally around week 16. Compare points per game if match counts remain uneven, alongside score margins and opponents faced when reviewing group moves.</p>}</section>
-    </>}
-    <footer className="football-footer"><p>Unofficial ability-group monitoring · Updated as results are reviewed.</p><a href={data.source} target="_blank" rel="noreferrer">Source results spreadsheet ↗</a></footer>{error&&<p role="alert">{error}</p>}
-    </>}
-    <SiteFooter/></main></div>;
+  const [leagueId,setLeagueId]=useState('green'),[block,setBlock]=useState(2),[team,setTeam]=useState('Tandragee Rovers'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const choose=id=>{setLeagueId(id);setTeam(LEAGUES.find(l=>l.id===id)?.team||'all');};
+  const league=LEAGUES.find(l=>l.id===leagueId),selected=league?leagueData(data,leagueId):null;
+  const rows=selected&&block<3?standings(selected.blocks[block],leagueTeams(selected,block)):[];
+  const coverage=selected&&block<3?scoreCoverage(selected,block):null;
+  const focused=rows.find(q=>q.team===team);
+  const statsTeam=focused||rows.find(q=>q.team===league?.team)||rows.find(q=>q.p)||null;
+  const fixtures=selected&&block<3?selected.blocks[block].filter(m=>team==='all'||m.home===team||m.away===team):[];
+  const cancelled=selected&&block<3?(selected.cancelled?.[block]||[]).filter(m=>team==='all'||m.home===team||m.away===team):[];
+  async function logout(){setBusy(true);try{const r=await fetch('/api/master-session',{method:'DELETE'});if(!r.ok)throw Error();window.location.assign('/login');}catch{setError('Could not log out. Please try again.');setBusy(false);}}
+  return <div className="football-theme" style={{'--team-accent':league?.color||'#ffad64','--pink':league?.color||'#ffad64','--green':league?.color||'#ffad64'}}><Head><title>2016 Under 11 Football | Four League Progress</title><meta name="robots" content="noindex,nofollow"/></Head><a className="skip-link" href="#football-main">Skip to content</a><SiteHeader active="football" actions={<button onClick={logout} disabled={busy}>Log out</button>}/><main id="football-main"><section className="hero"><div><span className="eyebrow">2016 UNDER 11 · SSG</span><nav className="football-team-tabs football-league-tabs" aria-label="2016 ability leagues">{LEAGUES.map(l=><button key={l.id} aria-pressed={leagueId===l.id} onClick={()=>choose(l.id)}><span style={{color:l.color}}>{l.name} League</span><small>{l.group}{l.team&&<> · <TeamText>Tandragee</TeamText></>}</small></button>)}<button aria-pressed={leagueId==='all'} onClick={()=>choose('all')}>All leagues</button></nav><h1><span style={{color:league?.color||'#ffad64',fontWeight:600}}>26–27</span> season <span>Progress</span><span className="title-dot">.</span></h1><p>{league?`${league.name} League · Under 11 ${league.group}`:'Red, Blue, Green and Yellow · all 2016 groups'}</p></div><span className="football-season">2026 / 2027</span></section><nav className="dashboard-controls" aria-label="Season blocks"><div className="tabs football-tabs">{[1,2,3,4].map(n=><button key={n} aria-current={block===n?'page':undefined} onClick={()=>{setBlock(n);setTeam(league?.team||'all');}} className={block===n?'selected':''}>Block {n}</button>)}</div><span className="personal-label">CHECKED {data.updated.toUpperCase()}</span></nav>
+  {block>2?<section className="football-card football-empty"><span className="eyebrow">BLOCK {block}</span><h2>No information yet</h2><p>Fixtures, results and findings will appear here when this block begins.</p></section>:<><div className="football-section-heading"><div><span className="eyebrow">BLOCK {block}</span><h2>{block===1?'The opening block':'The current block'}</h2></div><span className="football-period">{block===1?'Weeks 1–8 · Week 8 cancelled':'Weeks 9–11 recorded'}</span></div>{leagueId==='all'?<Overview data={data} block={block} onSelect={choose}/>:<>
+  {statsTeam&&<><p className="football-stat-subject"><TeamText>{(focused||league.team?'Team summary: ':'League leader: ')+statsTeam.team}</TeamText></p><section className="football-metrics" aria-label="Team summary">{[['Position',statsTeam.p?`${rows.indexOf(statsTeam)+1} / ${rows.filter(q=>q.p).length}`:'Unranked'],['Played',statsTeam.p],['Record',`${statsTeam.w}W · ${statsTeam.d}D · ${statsTeam.l}L`],['Points per game',statsTeam.p?(statsTeam.pts/statsTeam.p).toFixed(2):'—']].map(([label,value])=><div className="football-card" key={label}><span className="eyebrow">{label}</span><strong>{value}</strong></div>)}</section></>}
+  {block===2&&<GroupMoves moves={blockMoves(data,leagueId)} league={league.name}/>}
+  <section className="football-card"><h3>Block {block} league table</h3><LeagueTable rows={rows} league={league}/><Coverage data={selected} block={block}/><TableNote/></section>
+  <section className="football-card"><div className="football-section-heading"><h3>Fixtures and team detail</h3><label className="football-team-filter">Team<select style={team.startsWith('Tandragee')?{color:'#ffad64',fontWeight:700}:undefined} value={rows.some(q=>q.team===team)?team:'all'} onChange={e=>setTeam(e.target.value)}><option value="all">All teams</option>{rows.map(q=><option key={q.team} value={q.team} style={q.team.startsWith('Tandragee')?{color:'#ffad64',fontWeight:700}:undefined}>{q.team}</option>)}</select></label></div>{focused&&<p><TeamText>{`${focused.team}: ${focused.p} played · ${focused.w}W · ${focused.d}D · ${focused.l}L · ${focused.pts} points · ${focused.p?(focused.pts/focused.p).toFixed(2):'—'} points/game`}</TeamText></p>}<div className="football-fixtures">{[...fixtures,...cancelled.map(m=>({...m,cancelled:true}))].sort((a,b)=>a.week-b.week).map((m,i)=><div key={`${m.week}-${m.home}-${m.away}-${i}`}><span>Week {m.week}</span><p><TeamText>{m.home}</TeamText> <strong>{m.cancelled?'Cancelled':Number.isFinite(m.hg)&&Number.isFinite(m.ag)?`${m.hg}–${m.ag}`:'—'}</strong> <TeamText>{m.away}</TeamText></p>{!m.cancelled&&(!Number.isFinite(m.hg)||!Number.isFinite(m.ag))&&<small>Score not recorded</small>}</div>)}</div>{!fixtures.length&&!cancelled.length&&<p>No fixtures listed for this selection.</p>}</section>
+  <Findings league={league} rows={rows} block={block} coverage={coverage}/>
+  {leagueId==='yellow'&&<section className="football-card"><h3>Yellow source notes</h3><p className="football-note">Week 5’s “Ambassadors” is treated as Ambassadors Bears. “Seagoe fc” stays separate from Green’s Seagoe. Hanover’s week 9 Yellow bye note does not override their scored Green fixtures.</p></section>}
+  </>}</>}
+  <details className="football-card football-source-notes"><summary>Source coverage and team names</summary><ul>{data.sourceNotes.map(n=><li key={n}>{n}</li>)}</ul><p>Ridgeway Mill Youth and Ridgeway Mill Youth Blues are separate teams, as are similarly named Colts, Youth and 2017 entries.</p></details><footer className="football-footer"><p>Unofficial ability-group monitoring · Results manually checked against the shared spreadsheet.</p><a href={data.source} target="_blank" rel="noreferrer">Source results spreadsheet</a></footer>{error&&<p role="alert">{error}</p>}<SiteFooter/></main></div>;
 }
